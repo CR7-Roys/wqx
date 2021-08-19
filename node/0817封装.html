@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn1,.btn,.btn2{
+            width: 60px;
+            height: 40px;
+            background-color: chartreuse;
+        }
+        img{
+            width:500px;
+            height:350px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="show" class="btn1"> 显示A</button>
+        <button class="btn">隐藏A</button>
+        <button class="btn">隐藏B</button>
+        <button id="image" class="btn2">hover</button>
+
+    </div>
+
+    <img src="https://img2.baidu.com/it/u=1809984671,3271681036&fm=26&fmt=auto&gp=0.jpg" alt="小新">
+    <img src="https://img1.baidu.com/it/u=2076467199,279437875&fm=26&fmt=auto&gp=0.jpg" alt="小新">
+    <script>
+
+        var $ = function (select) {
+            return new F(select);
+        }
+        var F = function (id) {
+            this.getElementById(id);
+        }
+        F.prototype.getElementById = function(select) {
+            this.element = document.querySelectorAll(select)
+        }
+        F.prototype.hide = function () {
+            for (var i = 0; i < this.element.length; i++) {
+                this.element[i].style.display = 'none';
+            }
+        }
+        F.prototype.show = function () {
+            for (var i = 0; i < this.element.length; i++) {
+                this.element[i].style.display = '';
+            }
+        }
+        F.prototype.removeClass= function (ClassName) {
+            this.element[0].removeAttribute(ClassName);
+        }
+//2类的操作封装，包括新增、移除、替换
+        F.prototype.addClass = function(name){
+            for(var i=0;i<this.element.length;i++){
+                this.element[i].className +=' '+name;
+            }
+        }
+        F.prototype.delClass = function(name){
+            var reg = new RegExp('\\s*\\b'+name+'\\b\\s*');
+            for(var i=0;i<this.element.length;i++){
+                this.element[i].className = this.element[i].className.replace(reg,'');
+            }
+        }
+        F.prototype.changeClass = function(old,_new){
+            for(var i=0;i<this.element.length;i++){
+                this.element[i].className = this.element[i].className.replace(old,_new);
+            }
+        }
+        F.prototype.hover = function(inFunction,outFunction){
+            for(var i=0;i<this.element.length;i++){
+                this.element[i].onmouseover = inFunction;
+                this.element[i].onmouseout = outFunction;
+            }
+        }
+        
+        F.prototype.on = function (eName, callback) {
+            for (var i = 0; i < this.element.length; i++) {
+                if(this.element[i].addEventListener){
+                    this.element[i].addEventListener(eName, callback);
+                }else{
+                    this.element[i].attachEvent('on'+eName,callback);
+                 }
+             }
+        }
+        $(".btn").on('click', function () {
+            $('img').hide();
+        });
+        $("#show").on('click', function () {
+            $('img').show();
+        });
+        $("#show").removeClass(".btn1")
+        $("#show").addClass(".btn2")
+        $('#image').hover(function(){
+            $('#show').hide();
+        },function(){
+            $('#show').show();
+        })
+        console.log($('button'));
+    </script>
+
+</body>
+
+</html>

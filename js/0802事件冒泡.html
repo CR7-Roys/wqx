@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(14, 199, 54);
+            position:absolute;
+        }
+        #s1{
+            background-color: #fff;
+        }
+        #box2{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(230, 110, 11);
+        }
+    </style>
+</head>
+<body>
+    <div id="box2">
+        <div id="box">
+        box
+        <span id="s1">
+            span
+        </span>
+    </div>
+    </div>
+    
+    <script>
+        //记住:
+            //事件冒泡
+              //  就是事件的向上传导,当后代元素的事件被触发的时候,其祖先元素的相同事件也会被触发
+         var s1=document.getElementById('s1');
+         s1.onclick = function(event){
+         event = event|| window.event;
+         //取消冒泡事件
+         event.cancelBubble = true;
+         console.log('span');
+         }
+        var box=document.getElementById('box');
+        box.onmousemove = function(event){
+            event = event|| window.event;
+            var top = event.clientX;
+            var left = event.clientY;
+            box.style.top = top+"px";
+            box.style.left = left+"px";
+            console.log('box');
+            event.cancelBubble = true;
+        }
+        var box2=document.getElementById('box2');
+        box2.onmousemove = function(event){
+            event = event|| window.event;
+            var top = event.clientX;
+            var left = event.clientY;
+            console.log('box');
+        }
+    </script>
+</body>
+</html>

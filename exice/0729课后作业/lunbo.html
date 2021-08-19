@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width:700px;
+            height: 500px ;
+            background-color: rgb(240, 118, 144);
+            overflow: hidden;
+            position: relative;
+            
+        }
+        .father img:first-of-type{
+            position: absolute;
+            margin: 60px 60px;
+            width: 500px;
+            height: 300px;
+            z-index: 9;
+            
+        }
+        .father img{
+            position: absolute;
+            margin: 60px 60px;
+            width: 500px;
+            height: 300px;
+            z-index: 1;
+        }
+        .father ul {
+            list-style: none;
+            position: absolute;
+            left: 100px;
+            top:340px;
+           
+            z-index: 20;
+        }
+        .father ul li{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0px 2px;
+            cursor: pointer;
+            background-clip: content-box;
+            background-color: rgb(207, 211, 211);
+            border: 2px solid rgba(200,200,200, 0);
+        }
+         .father li.guding{
+            background-color: #fff;
+            border: 2px solid rgba(200,200,200, 0.7);
+        }
+        .father ul li:hover{
+            background-color: #fff;
+            border: 2px solid rgba(200,200,200, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="father" id="banner">
+        <ul >
+            <a href="" ><li class="guding"></li></a> 
+            <a href=""><li ></li></a>
+            <a href=""><li></li></a>
+            <a href=""><li></li></a>
+            <a href=""><li></li></a>
+            <a href=""><li></li></a>
+        </ul>
+            <img id="t1" src="https://img13.360buyimg.com/pop/s590x470_jfs/t1/192328/16/14271/94154/60f928a1E40e09a97/59fbc670b41fc284.jpg.webp" alt="haha">
+            <img id="t2" src="https://img11.360buyimg.com/pop/s590x470_jfs/t1/187187/37/14366/94317/60fa1e55E920d327f/86eb9906bdd1bc8f.jpg.webp" alt="哈哈">
+            <img id="t3" src="https://imgcps.jd.com/ling4/100022447596/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5f3a47329785549f6bc7a6e8/aaaf8df8/cr/s/q.jpg" alt="gen">
+            <img id="t4" src="https://img20.360buyimg.com/pop/s590x470_jfs/t1/194033/17/14596/51268/60fa7e78E9b86a1f7/bce802e4f493bb06.jpg.webp" alt="">
+            <img id="t5" src="https://img20.360buyimg.com/pop/s590x470_jfs/t1/182780/36/3645/90739/609b630bEc2e56747/dbe0b75e4ed87bbf.jpg.webp" alt="">
+            <img id="t6" src="https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000366/100021019550/FocusFullshop/CkRqZnMvdDEvMTkyODM5LzMwLzEzMDgzLzMzMzQ4Mi82MGVlOGE5ZEVjOGYxM2FmZC9jZjcyYzllMzQ5NzcyZGM2LnBuZxIJNS10eV8wXzU2MAI47ot6QhUKEeaLh-aMh-eZveWwj3RU5oGkEABCEwoP54mp576O5Lu35pu05LyYEAFCEAoM56uL5Y2z5oqi6LStEAJCCgoG5Yqb6I2QEAdYnsfezfQC/cr/s/q.jpg" alt="">
+    </div>
+    <script>
+        var banner = document.getElementById('banner');
+
+       var  li = banner.getElementsByTagName('li')
+        var img = banner.getElementsByTagName("img");
+        // for(let i=0;i<li.length;i++){
+        //    img[i].style.display="none";
+        //    if(img[0].style.display==="block"){
+        //     img[0].style.display="none";
+        //    }
+        //    img[i].style.display="block";
+            
+        // }
+        // img[0].style.display="block";
+        for(let index = 0;index<li.length;index++){
+
+        }
+       
+       
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #st{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(230, 144, 15);
+            /* 开启绝对定位 */
+            position: absolute;
+            /* 鼠标移动就修改位置 */
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取st
+            var st=document.getElementById('st');
+            //绑定鼠标的坐标，将事件绑给document才不会移出body
+            document.onmousemove = function(event){
+                //clientX和clientY 用于获取鼠标在当前的可见窗口的坐标，
+                //而div的偏移量是相对于整个页面的所以使用它，当高度很大时会产生距离
+                //  因此使用pageX，pageY用于获取鼠标相对当前页面的坐标
+                var left = event.clientX;
+                var top = event.clientY;
+                //设置div的偏移量，left和top是数值，所以要加‘px’
+                st.style.left=left+"px";
+                st.style.top=top+"px";
+                // 设置偏移量只对开启定位有作用，所以要设置偏移量。
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <div id="st"> </div>
+</body>
+</html>

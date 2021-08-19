@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<style>
+    div.btns {
+        background-color: #e5eecc;
+        padding: 7px;
+        border: solid 1px #c3c3c3;
+    }
+    
+</style>
+
+<body>
+    <div id="dj">
+        <!-- <img class="t3" src="./iamge/tt3.jpg" alt="">
+        <img class="t4" src="./iamge/tt4.jpg" alt="">
+        <img class="t5" src="./iamge/tt1.jpg" alt=""> -->
+    </div>
+    <img src="" alt="">
+    <div id="btn_list">
+        <!-- <button class="btn1">1</button>
+        <button class="btn2">2</button>
+        <button class="btn3">3</button> -->
+    </div>
+    <!-- <div class="div1">
+       dfsdfsdfsfsdfs
+    </div>
+    <div class="div2">
+       sdfsdfsdfsdfsf
+    </div>
+    <div class="div3">
+       sdfsdfsdfsdfsdfs
+    </div> -->
+  
+    <script type="text/javascript">
+        // $(".btn1").click(function(){
+        //     $(".div1").fadeIn();
+        // })
+        // $(".btn2").click(function(){
+        //     $("div2").fadeIn();
+        // })
+        // $(".btn3").click(function(){
+        //     $(".div3").fadeIn();
+        // })
+
+
+        // $(".btn1").click(function () {
+        //     $("img").toggle();
+        // });
+        // var img = $('img');
+        // var btn1 = $('.btn1');
+        // var btn2 = $('.btn2');
+        // var btn3 = $('.btn3');
+
+        // var img=document.getElementsByName('img');
+        // for(var i=0;i<img.length;i++){
+        //     img[i]
+        // }
+
+        var imgArr = ['./iamge/tt3.jpg', './iamge/tt4.jpg', './iamge/tt1.jpg'];
+        var img = $('img');
+        img.attr('src', imgArr[0]);
+        var btnList = document.getElementById('btn_list');
+        for (var i = 0; i < imgArr.length; i++) {
+            var btn = document.createElement('button')
+            btn.innerHTML = i + 1
+            btnList.appendChild(btn)
+            console.log(btn);
+        }
+        // var btnArr =  document.getElementsByTagName('button');
+        // for(var i=0;i<btnArr.length;i++){
+        //     btnArr[i].index=i;
+        //     btnArr[i].onclick = function(){
+
+        //         img.attr('src',imgArr[this.index]);
+        //     }
+        // }
+        var btnArr = $('button');
+        btnArr.map(function (index) {
+            $(this).click(function () {
+                img.attr('src', imgArr[index])
+            })
+        })
+    </script>
+</body>
+
+</html>

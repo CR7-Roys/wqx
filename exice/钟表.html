@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pan{
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background-color: rgb(70, 64, 64);
+            margin:0 auto;
+            position: relative;
+            border: 10px solid rgb(241, 167, 7);
+        }
+        .shizhen{
+            width: 10px;
+            height: 100px;
+            margin: 200px auto;
+            position: absolute;
+            left: 300px;
+            transform-origin: bottom;
+            background-color: rgb(230, 162, 17);
+            animation: zb 396000s infinite linear;
+        }
+        .fenzhen{
+            width: 6px;
+            height: 200px;
+            margin: 100px auto;
+            position: absolute;
+            z-index: 11;
+            left: 302px;
+            transform-origin: bottom;
+            background-color: rgb(15, 152, 216);
+            animation: zb 3600s infinite linear;
+        }
+
+        .miaozhen{
+            width: 3px;
+            height: 250px;
+            margin:50px  auto;
+            position: absolute;
+            z-index: 12;
+            left: 304px;
+            transform-origin: bottom;
+            background-color: rgb(226, 8, 44);
+            animation: zb 60s steps(60) infinite;
+           
+        }
+        @keyframes zb {
+                from{
+                    transform:rotate(0deg) ;
+                }
+                to{
+                    transform:rotate(360deg);
+                }
+            }
+        .yuandian{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(97, 102, 99);
+            border-radius: 50%;
+            margin: 282px auto;
+            position: absolute;
+            z-index: 17;
+            left: 290px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pan">
+        <div class="shizhen">
+
+        </div>
+        <div class="fenzhen">
+
+        </div>
+        <div class="miaozhen">
+
+        </div>
+        <div class="yuandian"></div>
+    </div>
+</body>
+</html>

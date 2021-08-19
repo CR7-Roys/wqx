@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul{
+            list-style-type: none;
+            /* 将ul设置为弹性容器 */
+            display: flex;
+            height: 200px;
+            width: 250px;
+            /* height: 150px; */
+            border: 1px solid skyblue;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(235, 139, 15);
+            /* flex-grow: 1; */
+        }
+        li:first-child{
+            /* flex-grow: 2; */
+            flex-shrink:2;
+            background-color: slateblue;
+        }
+        li:nth-child(2){
+            /* flex-basis: 指定元素在主轴上的基础长度 默认值是auto;
+                flex 是三个属性的简写
+                1.简写,缩写,基础长度
+                特殊写法
+                    initial: 0 1 auto
+                    auto : 1 1 auto
+                    none : 0 0 auto 变成了没有弹性的盒子  
+
+                    order 决定元素的排序
+            */
+            flex-basis: auto;
+        }
+        li:last-child{
+            /* flex-grow: 3; */
+            flex-shrink:4;
+            background-color: rgb(36, 238, 29);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

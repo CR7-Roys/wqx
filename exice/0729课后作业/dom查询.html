@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DOM查询</title>
+    <style>
+        .w {
+            width: 940px;
+            margin: 10px auto;
+        }
+
+        .total{
+            float: left;
+        }
+
+        .inner1,
+        .inner2 {
+            padding: 20px;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        li {
+            width: 60px;
+            height: 100%;
+            background-color: aquamarine;
+            list-style: none;
+            border: 1px solid;
+            margin-right: 2px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .btnList {
+            margin: 0 40px;
+            padding: 20px;
+            float: left;
+            width: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body class="w">
+    <div class="total">
+        <div class="inner1">
+
+            <p>你喜欢那个城市？</p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+
+            <p>你喜欢那款单机游戏？</p>
+
+            <ul>
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽世界</li>
+            </ul>
+
+            <p>你手机的操作系统是？</p>
+
+            <ul id="phone">
+                <li>IOS</li>
+                <li id="android">Android</li>
+                <li>windows Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner2">
+            gender:
+            <input type="radio" name="gender" value="male" />
+            Male
+            <input type="radio" name="gender" value="female" />
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde" />
+        </div>
+    </div><br>
+
+    <div class="btnList">
+        <!-- <div><button id="btn01">查找#bj的节点</button></div><br>
+        <div><button id="btn02">查找所有li的节点</button></div><br>
+        <div><button id="btn03">查找name=gender的节点</button></div><br>
+        <div><button id="btn04">查找#city下所有li的节点</button></div><br>
+        <div><button id="btn05">返回#city下所有子节点</button></div><br>
+        <div><button id="btn06">返回#phone的第一个子节点</button></div><br>
+        <div><button id="btn07">返回#bj的父节点</button></div><br>
+        <div><button id="btn08">返回#android的前一个兄弟节点</button></div><br>
+        <div><button id="btn09">返回#username的value属性值</button></div><br>
+        <div><button id="btn10">设置#username的value属性值</button></div><br>
+        <div><button id="btn11">返回#bj的文本值</button></div> -->
+        <div><button id="btn12">创建一个广州节点,添加到#city下面</button></div>
+        <div><button id="btn13">将广州节点插入到北京前面</button></div>
+        <div><button id="btn14">使用广州节点替换北京节点</button></div>
+        <div><button id="btn15">删除北京</button></div>
+        <div><button id="btn16">读取#city内的html代码</button></div>
+
+
+    </div>
+    <script>
+        // 按钮点击响应函数
+        //     参数
+        //         id 要绑定点击的dom对象的id属性值
+        //         fun 事件的回调函数,当点击元素时,该函数将会触发
+        // 什么时候要重构什么时候用一个添加
+            
+        function clickFun(id,fun){
+            var btn = document.getElementById(id);
+            btn.onclick = fun;
+        }
+        clickFun('btn12',function(){
+            var li = document.createElement('li');
+            var gztext = document.createTextNode("广州");
+            li.appendChild(gztext);
+            var ul = document.getElementById('city');
+            ul.appendChild(li);
+
+        })
+        /* var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02")
+        var btn03 = document.getElementById("btn03")
+        var btn04 = document.getElementById("btn04")
+        var btn05 = document.getElementById("btn05")
+        var btn06 = document.getElementById("btn06")
+        var btn07 = document.getElementById("btn07")
+        var btn08 = document.getElementById("btn08")
+        var btn09 = document.getElementById("btn09")
+        // var btn10 = document.getElementById("btn10")
+        var btn11 = document.getElementById("btn11")
+        btn01.onclick = function(){
+            var beijing = document.getElementById("bj");
+            console.log(beijing);
+
+        }
+        btn02.onclick = function(){
+            var lis = document.getElementsByTagName("li");
+                console.log(lis);
+            
+        }
+        btn03.onclick = function(){
+            var gd = document.getElementsByName('gender');
+            console.log(gd);
+            
+        }
+        btn04.onclick = function(){
+            var city = document.getElementById("city");
+            var cityLi = city.getElementsByTagName("li");
+                console.log(cityLi);
+            
+            
+        }
+        btn05.onclick = function(){
+            var cy = document.getElementById("city");
+            var ll = city.childNodes;
+           console.log(ll);
+            
+        }
+        btn06.onclick = function(){
+            console.log(document.getElementById('phone').firstChild);
+        }
+
+        btn07.onclick = function(){
+            console.log(document.getElementById("bj").parentNode);
+        }
+        btn08.onclick = function(){
+            console.log(document.getElementById("android").previousSibling);
+        }
+        btn09.onclick = function(){
+            var usr = document.getElementById("username")
+            console.log(usr.value);
+            
+        }
+        clickFun('btn10',function(){
+            var usr = document.getElementById("username")
+            usr.value="日本裁判真敬业!";
+            console.log(usr.value);
+        })
+        // btn10.onclick = function(){
+        //     var usr = document.getElementById("username")
+        //     usr.value="日本裁判真敬业!";
+        //     console.log(usr.value);
+        // }
+        btn11.onclick = function(){
+            var beijing = document.getElementById("bj");
+            console.log(beijing.innerText);
+
+        } */
+        
+    </script>
+</body>
+
+</html>

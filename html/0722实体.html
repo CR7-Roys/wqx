@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    在网页中编写多个空格会被浏览器自动解析为一个空格
+    实体(转义字符)
+        &实体名称;
+        &nbsp; 空格
+        &gt; 大于
+        &lt; 小于
+        &copy; 版权
+    <p>今天天气&nbsp;&nbsp;&nbsp;&nbsp;很不错</p>
+
+    音视频标签
+
+    audio 音频标签,默认情况下不允许用户之间控制播放和停止
+
+    属性
+        controls 是否允许用户控制播放
+        autoplay 是否自动播放音频
+        loop 音乐是否循环播放 
+
+    <audio src="./music/audio.mp3" controls loop></audio>
+    <audio controls>
+        <source src="./music/audio.mp3"/>
+        <source src="./music/audio.ogg"/>
+        <embed src="./music/audio.mp3"/> 
+    </audio>
+    <video controls>
+        <source src="./source/flower.mp4"> 
+        <source src="./source/flower.webm"> 
+        <embed src="./source/flower/mp4" type="video/mp4">
+
+    </video>
+    <iframe src="https://v.qq.com/x/cover/mzc002008hw5asj.html" frameborder="0" width="510" height="490"></iframe>
+</body>
+</html>

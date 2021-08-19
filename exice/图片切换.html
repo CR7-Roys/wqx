@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 240px;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            position: absolute;
+            bottom: 15px;
+            list-style: none;
+            left: 50%;
+            transform:  translateX(-50%);
+        }
+
+        ul li {
+            width: 10px;
+            height: 10px;
+            background-color: azure;
+            float: left;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        ul li.on{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="">
+        <ul></ul>
+    </div>
+    
+    <script>
+        var img = document.querySelector('img'),
+            ul = document.querySelector('ul')
+        var imgArr = ['https://n.sinaimg.cn/sports/transform/590/w240h350/20210805/8d73-705790ccdb907c3889cbcf0741748106.jpg', 'https://n.sinaimg.cn/www/590/w240h350/20210805/2cd5-b3265fad9c0d2c71dd5692a44db9af6c.jpg', 'https://n.sinaimg.cn/news/transform/590/w240h350/20210805/7970-49d6b90c3c369bc0c2f90ce2f547a52d.jpg'];
+        var timer;
+        var index = 0;
+
+        imgArr.forEach(function(item,i){
+            var li = document.createElement('li');
+            li.name = i
+            if(i===0){
+                li.className = 'on'
+            }
+            ul.appendChild(li);
+        })
+        
+        ul.onclick = function(event){
+            index = event.target.name;
+            if(index!==undefined){
+             setImg(img,imgArr,index)
+            }
+        }
+        
+        setImg(img,imgArr,index);
+        var obj = move(index,imgArr,img)
+            timer = obj.timer;
+            index = obj.index;
+     
+        img.onmouseover = function(){
+            clearInterval(obj.timer)
+        }
+        img.onmouseout = function(){
+            obj = move(index,imgArr,img);
+                index = obj.index;
+        }
+        function move(index,imgArr,img){
+            var timer = setInterval(function(){
+                index++
+                if(index>=imgArr.length){
+                    index = 0;
+                }
+                setImg(img,imgArr,index)
+            },1000)
+            return {
+                index:index,
+                timer:timer
+            }
+        }
+        function setImg(dom,imgArr,index){
+            dom.src = imgArr[index];
+            var li = document.getElementsByTagName('li')
+            for(var i=0;i<li.length;i++){
+                li[i].className = ''
+            }
+            li[index].className = 'on'
+        }
+  
+    </script>
+</body>
+
+</html>

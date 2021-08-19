@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            transform: translateX(-50%);
+        }
+        .hide{
+            display:none;
+        }
+        .modal{
+            position:fixed;
+            left:50%;
+            top:50%;
+            width:500px;
+            height:400px;
+            margin-left:-240px;
+            margin-top:150px;
+            z-index:10;
+            background-image: url(./image/tt5.jpg);
+        }
+        p{
+            
+            color: honeydew;
+            font-weight: bold;
+        }
+        p{
+            text-align:center;
+        }
+      .haha{
+          background-color: rgb(180, 238, 20);
+          background-image: url(./image/tt4.jpg);
+          width:600px;
+          text-align: center;
+          height: 200px;
+          color: gold;
+          border: 1px solid;
+          border-collapse:collapse;
+      }
+      th{
+          color: greenyellow;
+      }
+     .haha tr th,td{border:1px solid rgb(88, 65, 70);}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="添加" style="background:rgb(8, 224, 214)">
+        <div class="modal hide">
+            
+            <p>名字:<input type="text" name="name"></p>
+            <p>班级:<input type="text" name="classis"></p>
+            <p>成绩:<input type="text" name="grade"></p>
+            <p><input type="button" value="确定" style="background:rgb(8, 224, 214)"></p>
+            <p><input type="button" value="取消" style="background:rgb(8, 224, 214)"></p>
+        </div>
+        <div class="container">
+            <table class="haha">
+                <tr>
+                    <th>名字</th>
+                    <th>班级</th>
+                    <th>成绩</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>1班</td>
+                    <td>80</td>
+                    <td><input type="button" value="编辑" style="background:rgb(8, 224, 214)"> | <input type="button" value="删除" style="background:rgb(8, 224, 214)"></td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>2班</td>
+                    <td>81</td>
+                    <td><input type="button" value="编辑" style="background:rgb(8, 224, 214)"> | <input type="button" value="删除" style="background:rgb(8, 224, 214)"></td>
+                </tr>
+                <tr>
+                    <td>王五</td>
+                    <td>1班</td>
+                    <td>82</td>
+                    <td><input type="button" value="编辑" style="background:rgb(8, 224, 214)"> | <input type="button" value="删除" style="background:rgb(8, 224, 214)"></td>
+                </tr>
+                <tr>
+                    <td>刘柳</td>
+                    <td>2班</td>
+                    <td>83</td>
+                    <td><input type="button" value="编辑" style="background:rgb(8, 224, 214)"> | <input type="button" value="删除" style="background:rgb(8, 224, 214)"></td>
+                </tr>
+            </table>
+        </div>
+</div>
+    <script>
+        
+        $('input[value="添加"]').click(function(){
+            $('.hide').removeClass('hide');
+        });
+        
+        $('input[value="确定"]').click(function(){
+            $('.modal').addClass('hide');
+            $('input[type="text"]').val('');
+            var name=$('name'),
+                clasis=$('classis'),
+                grade=$('grade');
+            var tr=$("<tr></tr>");             
+                tr.html("<td>"+name+"</td>"+"<td>"+classis+"</td>"+"<td>"+grade+"</td>");
+                    $("tbody").append(tr);
+        })
+
+        $('input[value="取消"]').click(function(){
+            $('input[type="text"]').val('');
+            $('.modal').addClass('hide');
+        });
+        $('input[value="编辑"]').click(function(){
+            $('.hide').removeClass('hide');
+            //prevAll()获取前面所有的兄弟元素
+            var tds = $(this).parent().prevAll();
+            //jquery对象加上索引是dom对象
+            $($('.modal input')[0]).val($(tds[0]).text());
+            $($('.modal input')[1]).val($(tds[1]).text());
+            $($('.modal input')[2]).val($(tds[2]).text());
+        });
+        $('input[value="删除"]').click(function(){
+            $(this).parent().parent().remove();
+        });
+    </script>
+</body>
+</html>

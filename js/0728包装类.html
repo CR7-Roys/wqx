@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    基本数据类型
+        string NUmber Boolean null undefined
+    引用数据类型
+        Object
+    下面3个包装类
+        String() Number() Boolean()
+
+        我们在实际开发中不会使用基本数据类型的对象
+
+        当我们对一些基本的数据类型去调用属性和方法的时候
+        浏览器会临时的使用包装类将其转换成对象,然后再调用对象的属性和方法
+        调用完成以后,再将其转换成基本数据类型
+
+        每次转换都会形成新对象
+
+        
+    <script>
+        var num = new Number(3);
+        var num2 = new Number(3);
+        var str = new String('雷锋');
+        var bool = new Boolean(true);
+        str.hello = 'abc';
+        var str2 = '路飞';
+        // str2.hello = 'avv';
+        console.log(num===num2);
+        if(bool){
+            console.log(110);
+        }
+    </script>
+</body>
+</html>

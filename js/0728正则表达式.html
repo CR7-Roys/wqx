@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    邮箱的规则
+        1.前面可以随意
+        2.跟着一个@
+        3.后面跟着xxx
+        4. ..com +xxx
+
+        正则表达式用于定义一些字符串的规则
+        计算机可以根据正则表达式,检查一个字符串是否符合规则
+        将符合规则的内容提取出来
+
+        创建正则表达式
+            var 变量 =new RegExp("正则表达式")
+
+        test() 正则表达式的方法
+            检查一个字符串是否符合正则表达式的规则
+
+        使用 | 表示或意思
+        中括号[]里面的内容也是或的关系 [ab]=a|b 
+        [a-z] 表示任意的小写字母
+        [A-Z] 表示任意的大写字母
+        [A-z] 任意的字母不区分大小写
+        [0-9] 表示任意的数字
+        i  是一个修饰符 (搜索不区分大小写)。
+        [^]除了
+
+
+    <script>
+        var str = "ab";
+        // var reg = new RegExp("b");
+        var reg = /[A-z]|[0-9][^ab]/
+        var reg = /[^ab]/
+        var result =reg.test(str);
+        console.log(result,reg);
+    </script>
+</body>
+</html>

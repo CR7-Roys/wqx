@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            border:10px solid red;
+            /* BFC 块级格式化环境 
+                BFC是css里面的隐藏属性,开启BFC该元素会变成一个独立的布局区域
+
+                开启BFC后的特点
+                    1.开启BFC的元素不会被浮动元素所覆盖
+                    2.开启BFC的子元素和父元素的边框是不会重叠
+                    3.开启BFC的元素可以包含浮动的元素
+                
+                可以通过一些特殊的方式开启BFC的元素
+                    1.设置元素浮动(此方法，虽然可以撑开父元素，但是会导致父元素的宽度丢失,也会导致下边的元素上移)
+                    2.设置元素绝对定位
+                    3.设置元素display:inline-block;(此方法虽然也可以解决问题,但是转为行内块也会导致宽度丢失,因此也不推荐此方法)
+                    4.将元素的overflow设置为一个非visible的值(推荐方式:overflow:hidden;是副作用最小的开启BFC方式)
+                    overflow:hidden
+                    float:left
+                    display:initial-block
+                    overflow:visible;
+
+                 高度塌陷是浮动的问题;应该解决浮动的问题;
+
+                 清除浮动 clear
+                    作用 清除浮动元素对当前造成的影响
+                      可选值
+                        left 清除左侧浮动对当前元素的影响
+                        right 清除右侧浮动对当前元素的影响
+                        both 清除两者间对元素影响最大的
+
+
+            */
+            /* overflow: hidden; */
+        }
+        /* .box::after,.box::before{
+            content: '';
+            table能解决边距问
+            display: table;
+            clear: both;
+        } */
+        /* 高度塌陷的终极解决方法 */
+        .clearflx::before,.clearflx::after{
+            content: '';
+            /* table能解决边距问 */
+            display: table;
+            clear: both;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        .inner .r{
+            float: right;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner">
+
+        </div>
+        <div class="inner r"></div>
+        <!-- <div style="clear:both;"></div> -->
+    </div>
+</body>
+</html>

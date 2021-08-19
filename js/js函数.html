@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            1.函数声明
+            function sayHello(num,str){ 形参
+
+            }
+
+            2.函数表达式
+            var sayHello = function()
+            {
+
+            }
+            一个形参就相当一个变量
+            
+            调用函数
+            fun(10);
+
+            如果函数没有写return,默认返回underfind
+            如果写了return,但是后面任何返回值,也会返回undefined
+            renturn 可以返回任意类型
+
+            if语句不支持 break
+
+         */
+        // return和break的区别
+         function fun(){
+             console.log('函数执行了');
+             for(var i=0;i<5;i++){
+                    
+                    if(i===2){
+                        // 可以跳出循环
+                        // break;
+
+                        // 跳出当次循环
+                        // continue;
+
+                        // 除了跳出循环,直接结束整个函数,下面的代码不会执行
+                        return ;
+                    }
+                    console.log(i);
+                }
+                console.log('函数结束了');
+         }
+        // fun();
+        function fun2(){
+            //返回一个对象
+           /*  return {
+                name:'路飞'
+            } */
+
+           /*  写括号,返回对象
+            不写括号,返回undefined */
+        }
+        
+        //立即执行函数(匿名函数)只能使用一次,
+        /* (function(){
+            console.log('我是一个匿名函数');
+        })() */
+
+        //立即执行函数的传值
+        (function(a,b){
+            console.log('我是一个匿名函数');
+            console.log(a,b);
+        })(2,1)
+
+       // console.log(fun2());
+
+
+
+         /* function mianji(){
+             console.log('面积');
+             return function(){
+                 console.log('方法');
+             }
+
+         }
+         function fun(a){
+             var b=a;
+         }
+         fun(mianji); */
+
+           /*  mianji
+                函数对象 比方:要剥一个玉米,我把机器给你,你自己剥
+            mianji()
+                调用函数 比方:要剥一个玉米,我剥好了 再给你 
+                */
+    </script>
+</body>
+</html>

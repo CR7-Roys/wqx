@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 300px auto;
+            width: 100px;
+            height: 100px;
+            background-image: url('./image/trump_run.png');
+            animation:test 20s steps(6) infinite;
+        }
+       
+        @keyframes test {
+            /* from {
+                background-position:0px 0px;
+
+            }
+            to {
+                background-position:  -600px 0px; 
+            } */
+            0%{background-position:  0px 0px; }
+            25%{background-position:  -600px  0px; }
+            25.01%{background-position:  0px  300px;}
+            50%{background-position:  -600px 300px; }
+            50.01%{background-position:  0px  200px;}
+            70%{background-position:  -600px  200px;}
+            70.01%{background-position:  0px  100px;}
+            100%{background-position:  -600px  100px;}
+        }
+        
+    </style>
+</head>
+
+<body>
+        <div class="box">
+           
+        </div>
+</body>
+
+</html>

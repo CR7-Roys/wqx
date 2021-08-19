@@ -1,0 +1,739 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.gl:hover {
+  opacity: 0.5;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+#area {
+  height: 90px;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  z-index: 100;
+  animation: run 0.5s linear;
+}
+#area img {
+  width: 107px;
+  height: 30px;
+  position: absolute;
+  left: 350px;
+  top: 26px;
+}
+@keyframes run {
+  from {
+    height: 90px;
+  }
+  to {
+    height: 360px;
+  }
+}
+@keyframes end {
+  from {
+    height: 360px;
+  }
+  to {
+    height: 90px;
+  }
+}
+header {
+  background: url(../image/header-bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: 562px;
+  padding-bottom: 10%;
+}
+header .head {
+  position: relative;
+  z-index: 101;
+}
+header .head .tht {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  display: none;
+}
+header .head .nav {
+  width: 1200px;
+  height: 90px;
+  margin: 0 auto;
+}
+header .head .nav .logo {
+  width: 107px;
+  height: 56px;
+  float: left;
+}
+header .head .nav .logo img {
+  width: 107px;
+  height: 30px;
+}
+header .head .nav #jj {
+  float: right;
+  list-style-type: none;
+}
+header .head .nav #jj:hover a {
+  color: #000;
+}
+header .head .nav #jj li {
+  float: left;
+  position: relative;
+  text-align: center;
+  line-height: 90px;
+  transition: all 1.5s ease-in-out;
+}
+header .head .nav #jj li a {
+  color: #faf4f4;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 26px;
+}
+header .head .nav #jj li .nav_a {
+  list-style: none;
+  display: none;
+  position: absolute;
+}
+header .head .nav #jj li .nav_a li {
+  width: 180px;
+  line-height: 2.5em;
+}
+header .head .nav #jj li .nav_a li a {
+  color: #857d7d;
+}
+header .head .nav #jj li:hover .nav_a {
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main {
+  width: 100%;
+  height: 100%;
+}
+main .word {
+  width: 1200px;
+  margin: 50px auto;
+}
+main .word p {
+  line-height: 1.8em;
+  text-indent: 2em;
+}
+main .pitrue {
+  width: 1200px;
+  margin: 0px auto 50px;
+}
+main .pitrue .qq {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+main .pitrue .qq li {
+  width: 100%;
+  margin: 0 10px;
+  height: 160px;
+  float: left;
+}
+main .pitrue .qq .q1 {
+  background: url(../image/t3.png) no-repeat;
+  background-size: 100% 100%;
+}
+main .pitrue .qq .q1:hover {
+  opacity: 0.5;
+}
+main .pitrue .qq .q2 {
+  background: url(../image/t5.png) no-repeat;
+  background-size: 100% 100%;
+}
+main .pitrue .qq .q2:hover {
+  opacity: 0.5;
+}
+main .pitrue .qq .q3 {
+  background: url(../image/t4.png) no-repeat;
+  background-size: 100% 100%;
+}
+main .pitrue .qq .q3:hover {
+  opacity: 0.5;
+}
+main .pitrue .qq span {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+main .product {
+  width: 100%;
+  margin-bottom: 80px;
+}
+main .product .wenzi {
+  width: 1200px;
+  height: 80px;
+  list-style: none;
+  margin: 0 auto;
+}
+main .product .wenzi .obj {
+  width: 399px;
+  height: 76px;
+  border-bottom: 4px solid #e91b6a;
+}
+main .product .wenzi li {
+  width: 399px;
+  height: 80px;
+  display: flex;
+  border-right: 1px solid #dadadd;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+main .product .wenzi li a {
+  font-size: 24px;
+  color: #696464;
+}
+main .product .wenzi li:last-child {
+  border-right: none;
+}
+main .product .product_a {
+  width: 100%;
+  background-color: #f7f7f7;
+  border-top: 1px solid #e7e0e0;
+}
+main .product .product_a .neirong {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+main .product .product_a .neirong li {
+  width: 320px;
+  height: 100%;
+  margin: 0 40px;
+}
+main .product .product_a .neirong li .logo_ner {
+  width: 100%;
+  height: 90px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+main .product .product_a .neirong li .logo_ner img {
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+}
+main .product .product_a .neirong li .logo_ner span {
+  color: #333;
+  font-size: 20px;
+}
+main .product .product_a .neirong li p {
+  width: 100%;
+  height: 112px;
+  margin: 27px 20px 15px 0px;
+  line-height: 1.8em;
+  font-size: 15px;
+  color: #8f8888;
+}
+main .product .product_a .neirong li span {
+  width: 100%;
+  height: 25px;
+  display: block;
+}
+main .product .product_a .neirong li span a {
+  color: #f5275f;
+}
+main .product .product_a .chakan {
+  width: 100%;
+  height: 88px;
+  display: flex;
+}
+main .product .product_a .chakan .more {
+  display: block;
+  width: 180px;
+  height: 46px;
+  line-height: 46px;
+  background: #f5275f;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+main .mtdt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .mtdt p {
+  display: block;
+  font-size: 30px;
+  color: #4c4c50;
+  margin-bottom: 20px;
+}
+main .dynamic_list {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0 auto;
+}
+main .dynamic_list li {
+  width: 578px;
+  border: 1px solid rgba(241, 240, 238, 0);
+}
+main .dynamic_list li img {
+  width: 578px;
+  height: 320px;
+}
+main .dynamic_list li:hover {
+  border: 1px solid #f1f0ee;
+}
+main .dynamic_list li .dynamic_info {
+  width: 528px;
+  margin: 0 auto;
+}
+main .dynamic_list li .dynamic_info .info {
+  display: block;
+  width: 100%;
+  font-size: 19px;
+  line-height: 4em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .dynamic_list li .dynamic_info .info a {
+  color: #000;
+}
+main .dynamic_list li .dynamic_info p {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 1.88em;
+}
+main .dynamic_list li .dynamic_info p a {
+  color: #787878;
+}
+main .dynamic_list li .dynamic_info .timexx {
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+  line-height: 1.8em;
+}
+main .dynamic_list li .dynamic_info .timexx .time_left {
+  width: 40%;
+  float: left;
+  display: block;
+  text-align: left;
+}
+main .dynamic_list li .dynamic_info .timexx .time_left a {
+  color: #b4b4b4;
+}
+main .dynamic_list li .dynamic_info .timexx .time_xx {
+  width: 40%;
+  display: block;
+  float: right;
+  text-align: right;
+}
+main .dynamic_list li .dynamic_info .timexx .time_xx a {
+  color: #f5275f;
+}
+main .moredt {
+  display: block;
+  width: 180px;
+  height: 46px;
+  line-height: 46px;
+  background: #f5275f;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+footer {
+  width: 100%;
+  margin-top: 80px;
+  position: relative;
+  background-color: #f7f7f7;
+}
+footer .footer_wrap {
+  width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #f7f7f7;
+}
+footer .footer_wrap .clearfix {
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+}
+footer .footer_wrap .clearfix .foot_logo {
+  position: absolute;
+  right: 0;
+  width: 135px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background-image: url(../image/redM.png);
+  background-size: 135px 35px;
+}
+footer .footer_wrap .clearfix .ulli_list {
+  width: 616px;
+  display: flex;
+}
+footer .footer_wrap .clearfix .ulli_list .li_list {
+  width: 204px;
+  list-style: none;
+}
+footer .footer_wrap .clearfix .ulli_list .li_list li {
+  line-height: 2.6em;
+  cursor: pointer;
+  color: #746b6b;
+}
+footer .footer_wrap .clearfix .ulli_list .li_list li img {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  left: 48%;
+  top: 28px;
+  display: none;
+}
+footer .footer_wrap .clearfix .ulli_list .li_list .weixin:hover img {
+  display: block;
+}
+footer .footer_wrap .clearfix .ulli_list .li_list .lis {
+  font-size: 20px;
+}
+footer .footer_wrap .footer_info {
+  width: 100%;
+  height: 32px;
+  margin: 90px 0 25px 0;
+  display: flex;
+}
+footer .footer_wrap .footer_info .logoo {
+  width: 55px;
+  height: 15px;
+  margin: 4px 25px 0 10px ;
+  background: url(../image/blackM.png) no-repeat 100% 100%;
+  background-size: contain;
+}
+footer .footer_wrap .footer_info span {
+  color: gray;
+}
+footer .footer_wrap .footer_info a {
+  color: gray;
+}
+footer .footer_wrap .footer_s {
+  width: 100%;
+  height: 78px;
+}
+footer .footer_wrap .footer_s span {
+  font-size: 14px;
+  line-height: 1.8em;
+  color: gray;
+}
+footer .footer_wrap .footer_s a {
+  color: gray;
+}
+footer .footer_wrap .footer_s a:hover {
+  color: #f5275f;
+}
+@media only screen and (max-width: 1250px) {
+  #header {
+    width: 100%;
+    height: 462px;
+    background-size: 100% 100%;
+  }
+  #header .nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+  #header .logo {
+    width: auto;
+  }
+  #header li {
+    width: auto;
+  }
+  #main {
+    width: 100%;
+  }
+  #main .word {
+    width: 100%;
+    height: 100%;
+  }
+  #main .pitrue {
+    width: 100%;
+  }
+  #main .qq {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  #main .qq li {
+    width: 100%;
+    margin: 0 10px;
+  }
+  #main .wenzi {
+    width: 100%;
+    height: 80px;
+    display: flex;
+  }
+  #main .wenzi .obj {
+    width: 100%;
+  }
+  #main .wenzi .item {
+    width: 100%;
+  }
+  #main .product_a {
+    width: 100%;
+    height: 100%;
+  }
+  #main .product_a .neirong {
+    width: 100%;
+  }
+  #main .dynamic_list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #main .dynamic_list li {
+    width: 45%;
+    height: 45%;
+  }
+  #main .dynamic_list li img {
+    width: 100%;
+    height: 100%;
+  }
+  #main .dynamic_list li .dynamic_info {
+    width: 100%;
+    height: 100%;
+  }
+  #footer {
+    width: 100%;
+  }
+  #footer .footer_wrap {
+    width: 100%;
+  }
+  #footer .footer_wrap .clearfix {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #footer .footer_wrap .clearfix .ulli_list {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  #header {
+    width: 100%;
+    height: 300px;
+    background-size: 100% 100%;
+  }
+  #header .nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+  #header .nav .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #header .nav #jj {
+    position: absolute;
+    left: 0;
+  }
+  #header .nav li {
+    line-height: 1.5em;
+  }
+  #main .word {
+    width: 100%;
+    height: 100%;
+  }
+  #main .pitrue {
+    width: 100%;
+  }
+  #main .qq {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  #main .qq li {
+    width: 100%;
+    margin: 0 10px;
+  }
+  #main .wenzi {
+    width: 100%;
+  }
+  #main .wenzi li {
+    width: 100%;
+  }
+  #main .product_a {
+    width: 100%;
+    height: 100%;
+  }
+  #main .product_a .neirong {
+    width: 100%;
+  }
+  #main .dynamic_list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #main .dynamic_list li {
+    width: 40%;
+    height: 40%;
+  }
+  #main .dynamic_list li img {
+    width: 100%;
+    height: 100%;
+  }
+  #main .dynamic_list li .dynamic_info {
+    width: 100%;
+    height: 100%;
+  }
+  #footer {
+    width: 100%;
+    height: 100%;
+  }
+  #footer .foot_logo {
+    display: none;
+  }
+}
+@media only screen and (max-width: 756px) {
+  #header {
+    width: 100%;
+    height: 500px;
+    background-size: 150% 150% ;
+    background-position: center;
+  }
+  #header .tht {
+    top: 18px;
+    left: 20px;
+    display: block;
+    cursor: pointer;
+  }
+  #header .nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+  #header .nav .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #header .nav #jj {
+    display: none;
+    float: left;
+    list-style-type: none;
+  }
+  #header .nav #jj li {
+    text-align: left;
+    width: 100%;
+    padding-left: 80px;
+    height: 72px;
+    line-height: 72px;
+    transition: all 1.5s ease-in-out;
+  }
+  #header .nav #jj li:hover .nav_a {
+    display: none;
+  }
+  #main .word {
+    width: 100%;
+    height: 100%;
+  }
+  #main .pitrue {
+    width: 100%;
+  }
+  #main .qq {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #main .qq li {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 8px;
+  }
+  #main .wenzi {
+    width: 100%;
+    height: 80px;
+  }
+  #main .product_a {
+    width: 100%;
+    height: 100%;
+  }
+  #main .product_a .neirong {
+    width: 100%;
+  }
+  #main .product_a .neirong li {
+    width: 150%;
+    height: 100%;
+  }
+  #main .mtdt {
+    display: flex;
+    justify-content: left;
+    margin-left: 40px;
+  }
+  #main .dynamic_list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #main .dynamic_list li {
+    display: flex;
+    width: 90%;
+    margin: 5px auto;
+  }
+  #main .dynamic_list li img {
+    width: 170px;
+    height: 100px;
+  }
+  #main .dynamic_list li p {
+    display: none;
+  }
+  #main .dynamic_list li .time_xx {
+    display: none;
+  }
+  #main .dynamic_list li .dynamic_info {
+    width: 59%;
+    margin-left: 30px;
+  }
+  #main .dynamic_list li .dynamic_info .info {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+  #main .dynamic_list li .dynamic_info .time_left {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  #footer {
+    width: 100%;
+    height: 100%;
+  }
+}

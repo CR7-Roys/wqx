@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Per(name,age){
+           this.name=name,
+           this.age=age;
+       }
+       Per.prototype.sex=110;
+       Per.prototype.say=function(){
+           console.log('我叫'+this.name+',我取得了'+this.num+'分');
+       }
+       var per=new Per('鸣人',19);
+       function Stu(name,age,num){
+        this.p=Per,
+        this.p(name,age),
+        this.num=num;
+       }
+       Stu.prototype=Per.prototype;
+       var stu=new Stu('佐助',18,120);
+       stu.say();
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height:200px;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+<button id="btn">隐藏</button>
+<!-- <button id="btn">显示</button> -->
+<div id="app"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        var app = document.getElementById('app');
+        console.log(app);
+        btn.onclick = function(){
+            if(app.style.display==='none'){
+                app.style.display='block';
+            }
+            else{
+                app.style.display='none';
+                btn.innerHTML= '显示';
+            }
+            // console.log(110);
+            // alert('你别点了');
+            // app.innerHTML = "路飞";
+            
+        }
+    </script>
+</body>
+</html>

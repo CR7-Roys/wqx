@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级导航</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .nav{
+            width: 600px;
+            height: 40px;
+            background-color: grey;
+            margin: 40px auto 0;
+        }
+        .nav li{
+            float: left;           
+            margin-right: 10px;
+            position: relative;
+        }
+        .nav li a{
+            display: block;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            background-color: #c1727f;
+            line-height: 40px;         
+            color: #fff;
+        } 
+        .nav li:hover .nav2{
+            display: block;           
+        }
+        .nav li a:hover{
+            *background-color:lightcoral;
+        }
+        .nav li .nav2{
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+        .banner{
+            width: 800px;
+            height: 350px;
+            margin: 0 auto;
+            background:lawngreen;
+            line-height: 350px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">产品中心</a>
+            <ul class="nav2">
+                <li><a href="#">产品1</a></li>
+                <li><a href="#">产品2</a></li>
+                <li><a href="#">产品3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">游戏中心</a>
+            <ul class="nav2">
+                <li><a href="#">产品1</a></li>
+                <li><a href="#">产品2</a></li>
+                <li><a href="#">产品3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">电影中心</a>
+            <ul class="nav2">
+                <li><a href="#">产品1</a></li>
+                <li><a href="#">产品2</a></li>
+                <li><a href="#">产品3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">娱乐中心</a>
+            <ul class="nav2">
+                <li><a href="#">产品1</a></li>
+                <li><a href="#">产品2</a></li>
+                <li><a href="#">产品3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">教育中心</a>
+            <ul class="nav2">
+                <li><a href="#">产品1</a></li>
+                <li><a href="#">产品2</a></li>
+                <li><a href="#">产品3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="banner">
+        轮播图
+    </div>
+</body>
+</html>

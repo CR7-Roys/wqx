@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(247, 154, 15);
+        }
+
+        p {
+             display: -webkit-box; /*将对象作为弹性伸缩盒子模型显示。 */
+            -webkit-box-orient: vertical;/*从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）*/
+            -webkit-line-clamp: 2;/*需要组合上面两个属性，表示显示的行数。*/
+            /* white-space: nowrap; 溢出不换行 */
+            overflow: hidden;/* 超出的文本隐藏*/
+        }
+    </style>
+</head>
+
+<body>    
+    <div class="box">
+        <p>【升国旗奏国歌！东京奥运中国已8次包揽冠亚军】8月3日，东京奥运会体操赛场，中国选手管晨辰女子平衡木金牌。中国选手唐茜靖获得银牌。中国队已在本次东京奥运会上第8次包揽冠亚军。祝贺中国队，继续加油！</p>
+    </div>
+</body>
+
+</html>

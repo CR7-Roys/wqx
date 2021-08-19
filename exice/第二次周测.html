@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一题 完成下列函数，判断是否全等，如果全等返回 true,否则返回 false
+        function identity(val1, val2) {
+            if(typeof(val1)==typeof(val2)){
+                if(val1!=val2){
+                    return false;
+                }else
+                return true;
+            }else
+                return false;
+        }
+        console.log(identity(225,"225"));
+
+        //第二题 写一个函数，给定字符串 str，检查其是否以元音字母结尾
+        // function end(str){
+        //     var arr = /[aeiou]$/i;
+        //     return arr.test(str);
+        // }
+        // console.log(end('beatifuli'));
+
+        //第三题 请修复给定的 js 代码中，函数定义存在的问题(确保ie10执行正确)
+        // function fun(flag) {
+        //   var flag = flag||window.event;
+        //     if (flag) {
+        //       var getValue = function(){
+        //            return 'a';
+        //       } 
+        //     } else {
+        //         var getValue = function() {
+        //             return 'b';
+        //         }
+        //     }
+        //     return getValue();
+        // }
+        // console.log(fun(true));
+
+        //第四题 css样式转换为Js样式的驼峰格式
+        // function cssStyle2DomStyle(sName) {
+        //     var str = sName.split('');
+        //     for(var i=1;i<str.length;i++){
+        //        if(str[i]==='-'){
+        //            str[0].toLowerCase();
+        //            str.splice(i,1);
+        //            if(i<str.length){
+        //                str[i]=str[i].toUpperCase();
+        //            }
+        //        }
+        //     }
+        //     for(var i=0;i<str.length;i++){
+        //          if(str[i]==='-'){
+        //             str.splice(i,1);
+        //         }
+        //     }
+        //     return str.join('');
+        // }
+        //     console.log(cssStyle2DomStyle('-webkit-border-image'));
+    </script>
+</body>
+
+</html>

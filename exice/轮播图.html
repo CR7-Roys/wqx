@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #out {
+            width: 700px;
+            height: 392px;
+            margin: 100px auto;
+            overflow: hidden;
+            background-color: rgb(59, 226, 26);
+            position: relative;
+        }
+        #imgArr {
+            list-style: none;
+            /* width: 2000px; */
+            position: absolute;
+        }
+        li {
+            float: left;
+            cursor: pointer;
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 15px;
+            left: 70px;
+        }
+
+        #nav a {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+            opacity: 0.7;
+            border-radius: 50%;
+            background-color: rgb(10, 162, 233);
+        }
+
+        #nav a:hover {
+            background-color: rgb(17, 230, 134);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <ul id="imgArr">
+            <li><img src="./image/tt1.jpg" alt="1"></li>
+            <li><img src="./image/tt2.jpg" alt="2"></li>
+            <li><img src="./image/tt3.jpg" alt="3"></li>
+            <li><img src="./image/tt4.jpg" alt="4"></li>
+            <li><img src="./image/tt5.jpg" alt="5"></li>
+            <li><img src="./image/tt1.jpg" alt="6"></li>
+        </ul>
+        <div id="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+    <script>
+        var imgArr = document.getElementById('imgArr');
+        var imgAll = document.getElementsByTagName('img');
+        imgArr.style.width = 700 * imgAll.length + "px";
+        var index = 0;
+        var allA = document.getElementsByTagName('a');
+        allA[index].style.backgroundColor = "black";
+        for (var i = 0; i < allA.length; i++) {
+            allA[i].num = i;
+            allA[i].onclick = function () {
+                //关闭自动切换定时器
+                clearInterval(timer);
+                index = this.num;
+                setA();
+                move(imgArr, "left", -700 * index, 20, function () {
+                    //动画执行完毕,开启自动切换
+                    autoChange();
+                });
+
+            };
+        }
+        //开启自动切换图片
+        autoChange();
+
+        function setA() {
+
+            //判断当前索引是否为最后一张图片
+            if (index >= imgAll.length - 1) {
+                //则将index设置为0
+                index = 0;
+                imgArr.style.left = 0;
+            }
+            for (var i = 0; i < allA.length; i++) {
+                allA[i].style.backgroundColor = "";
+            }
+            allA[index].style.backgroundColor = "black";
+        };
+
+        //定义一个自动切换的定时器的标识
+        var timer;
+        //创建一个函数,用来开启自动切换图片
+        function autoChange() {
+            //开启定时器
+            timer = setInterval(function () {
+                //使索引自增
+                index++;
+
+                //判断index的值
+                index %= imgAll.length;
+                //执行动画切换
+                move(imgArr, "left", -700 * index, 20, function () {
+                    //修改导航点
+                    setA();
+                });
+            }, 3000);
+        }
+
+
+        function move(obj, attr, target, speed, callback) {
+            //关闭上一个定时器
+            clearInterval(obj.timer);
+            //获取元素目前的位置
+            var current = parseInt(getStyle(obj, attr));
+            if (current > target) {
+                speed = -speed;
+            }
+            //开启一个定时器
+            obj.timer = setInterval(function () {
+                //原来的left值
+                var oldValue = parseInt(getStyle(obj, attr));
+                //原来的值加上新增加的
+                var newValue = oldValue + speed;
+
+                if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+                    newValue = target;
+                }
+                obj.style[attr] = newValue + "px";
+                //当元素于东到达0px时,使其定制执行动画
+                if (newValue === target) {
+                    //达到目标,关闭定时器
+                    clearInterval(obj.timer);
+                    //动画执行完毕,调用回调函数
+                    callback && callback();
+                }
+            }, 30);
+        }
+        function getStyle(obj, name) {
+            if (getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            } else {
+                return obj.currentStyle[name];
+            }
+        }
+    </script>
+</body>
+
+</html>

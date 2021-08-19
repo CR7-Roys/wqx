@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <script>
+        var btn = document.getElementById('btn');
+        // btn.onclick = function(){
+        //     console.log('111');
+        // }
+        // btn.onclick = function(){
+        //     console.log('111ddf');
+        // } 防止下面的重复,不用onclick,不能重复定义多个函数,因为下面会覆盖上面的内容
+
+        /*   addEventListener()
+            可以为元素绑定响应函数
+             参数
+                 1.事件的字符串,不要on
+                 2.回调函数
+                 3.是否在捕获阶段触发事件,需要一个布尔值,一般都传false
+                 但是不支持IE8,支持重复定义
+                  */
+
+        /*  attachEvent() ie8中使用
+            可以为元素绑定响应函数
+                参数
+                    1.事件的字符串,要on
+                    2.回调函数
+                    3.是否在捕获阶段触发事件,需要一个布尔值,一般都传false
+                    但是不支持IE8,支持重复定义
+//  */
+//         btn.addEventListener('click', function () {
+//             console.log('ddfdf');
+//         });
+//         btn.attachEvent('onclick', function (obj) {
+//             console.log(11122);
+//         });
+        bindEvent(btn,'click',function(){
+            // console.log(this);
+            this.innerHhtml='路費';
+        })
+        function bindEvent(obj,eventName,callback){
+            if(obj.addEventtListener){
+                obj.addEventListener(eventName,callback,false);
+            }else{
+                obj.attachEvent('on'+eventName,function(){
+                    callback.call(obj);
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

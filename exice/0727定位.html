@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+            height: 2000px;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+
+            background-color: aqua;
+        }
+
+        .box2 {
+          width: 200px;
+            height: 200px;
+              /* 
+            position: sticky;
+            top: 100px;
+            left: 200px; */
+            position: absolute;
+            z-index:100;
+            background-color: rgb(4, 56, 56);
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            z-index:122;
+            left: 100px;
+
+            background-color: rgb(219, 172, 17);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">1 </div>
+    <div class="box2">2</div>
+     <div class="box3">3</div>
+</body>
+
+</html>

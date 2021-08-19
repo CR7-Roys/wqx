@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+#head {
+    height: 60px;
+    background: #131b26;
+}
+
+.sec {
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    /* position:fixed; */
+}
+
+.logo {
+    float: left;
+    height: 100%;
+    width: 15%;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    float: left;
+    width: 41%;
+    height: 100%;
+}
+
+.nav ul {
+    margin-top: -1px;
+    float: left;
+    list-style: none;
+}
+
+.sec li {
+    height: 99%;
+    padding: 20px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    color: #fff;
+}
+
+.sec li:hover {
+    background-color: orangered;
+}
+
+.sec p {
+    width: 63px;
+    height: 36px;
+    float: right;
+    margin-top: 13px;
+}
+
+.sec span {
+    color: #fff;
+    float: right;
+    margin: 6px 15px;
+
+
+}
+
+.sec .xyj {
+    float: left;
+    width: 10%;
+    height: 100%;
+}
+
+.sec .xyj p {
+    width: 100%;
+    height: 36px;
+    float: left;
+    margin-top: 13px;
+    background: rgb(46, 45, 45);
+}
+
+.sec .xyj p span {
+    color: red;
+    float: left;
+    margin: 6px 15px;
+
+
+}
+
+.sec p:hover {
+    background-color: orangered;
+}
+
+#main {
+    width: 900px;
+    margin: 20px auto;
+}
+
+.gg {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+}
+
+.gg img {
+    width: 100%;
+    height: 100px;
+
+}
+
+.tow {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 30px;
+}
+
+.lzt {
+    width: 61%;
+    height: 100%;
+    float: left;
+}
+
+.lzt img {
+    width: 100%;
+    height: 100%;
+}
+
+.wz {
+    width: 36%;
+    height: 100%;
+    float: right;
+}
+
+.wz ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.wz li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+.wz li:hover {
+    color: red;
+}
+
+.wza {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #d3c3c3;
+}
+
+.wzb {
+    width: 100%;
+    height: 169px;
+}
+.wzb .fa{
+    color: orange;
+    font-size: 24px;
+}
+.wz p{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.title {
+    font-size: 17px;
+    font-weight: 100px;
+}
+
+h1{
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.wz a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.spdh {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.spdh span {
+    color: #000;
+    width: 20%;
+    height: 80%;
+    float: right;
+    margin-top: 4px;
+}
+.spdh span:hover {
+    color: red;
+}
+.jcsp {
+    width: 10%;
+    height: 29px;
+    float: left;
+}
+
+.jcsp p {
+    font-size: 20px;
+}
+
+.dht {
+    width: 60%;
+    height: 29px;
+    float: left;
+}
+.dht ul li span{
+    width: 32px;
+    height: 30px;
+    border-bottom: 2px solid red;
+    margin-top: -1px;
+}
+.dht ul li span:hover{
+    color: red;
+    
+}
+.spdh ul {
+    margin-left: 30px;
+    list-style: none;
+}
+
+.spdh ul li {
+    float: left;
+    margin: 4px 15px;
+    color: #000;
+}
+
+.spdh ul li:hover{
+    color: red;
+}
+.gd {
+    width: 30%;
+    height: 29px;
+    float: left;
+}
+
+.spq {
+    overflow: hidden;
+}
+
+.spq .spup {
+    overflow: hidden;
+}
+
+.faa {
+    width: 284px;
+    height: 100%;
+    float: left;
+}
+
+.fab {
+    width: 284px;
+    height: 100%;
+    float: left;
+    margin: 0 24px;
+}
+
+.fac {
+    width: 284px;
+    height: 100%;
+    float: left;
+}
+.fac .pa{
+    color: paleturquoise;
+    font-size: 15px;
+}
+.bfsp {
+    width: 100%;
+    /* height: 160px; */
+}
+
+.bfsp img {
+    width: 100%;
+    height: 100%;
+}
+
+.feeb {
+    width: 100%;
+    height: 20px;
+    margin: 20px 0;
+}
+
+.zz {
+    width: 77%;
+    height: 100%;
+    float: left;
+}
+
+.bfl {
+    width: 23%;
+    height: 100%;
+    float: right;
+}
+
+.spms {
+    width: 100%;
+    height: 44px;
+}
+
+.spq .spdown {
+    overflow: hidden;
+    margin: 30px auto;
+}
+.spq p{
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+    overflow: hidden;
+}
+#footer{
+    width: 100%;
+    background-color: rgb(44, 42, 42);
+}
+.dhjz{
+    width: 900px;
+    margin: 0 auto;
+}
+.dbdh{
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.dbdh ul {
+    margin-top:10px;
+    margin-left: 50px;
+    height: 30px;
+    list-style: none;
+    overflow: hidden;
+    
+    
+}
+.dbdh ul li {
+    float: left;
+    margin: 1px 15px;
+    color: #000;
+}
+.fot2{
+    width: 100%;
+    height: 30px;
+}
+.fot3{
+    width: 100%;
+    height: 30px;
+}
+#footer p{
+    text-align: center;
+}

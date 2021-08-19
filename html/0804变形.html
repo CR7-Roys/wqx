@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            perspective: 400px;
+        }
+        body{
+            background-color: #ccc;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(38, 12, 184);
+            margin: 100px auto 0;
+            
+
+
+            /* transform 用来设置元素变形的效果
+                平移
+                  translateX() 沿着x轴方向平移
+                  translateY()
+                  translateZ()
+                旋转
+                    rotateX
+                    rotateY
+                    rotateZ
+                deg 表示多少度
+                turn:1 表示转多少圈
+
+                缩放
+                    scaleX
+                    scaleY
+                    scaleZ
+                   */
+                transition: 5s all;
+                transform-style:preserve-3d ;
+        }
+        body:hover .box1{
+            /* transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+             
+            */
+            transform:scaleZ(8) rotateZ(360deg);
+   
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(202, 155, 24);
+        }
+        .box3{
+            height: 500px;
+            width: 500px;
+            background-color: rgb(60, 202, 24);
+            border: 2px solid;
+        }
+        .box4{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(190, 17, 32);
+            /* 当想要垂直居中时,这是高度已知的情况
+            1.css的计算函数 margin:calc(50% - 自身像素);
+            2.开定位
+            3.开定位,margin:auto 0;
+            在高度未知的情况下使用
+            4.transform 例子 margin-top:50%  transformX(-自身像素大小)
+            */
+            margin-top:calc(50% - 100px);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

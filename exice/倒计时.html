@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 200px;
+            width: 700px;
+            background-color: rgb(12, 211, 161);
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+
+        }
+
+        span {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(212, 225, 231);
+            line-height: 50px;
+            display: inline-block;
+            /* vertical-align:middle; */
+            box-shadow: 0 0 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        距离国庆还剩余:
+        <span class="day">00</span>天
+        <span class="hour">00</span>小时
+        <span class="min">00</span>分
+        <span class="second">00</span>秒
+    </div>
+    <script>
+        var box1 = document.getElementById('box');
+        var spans = box1.getElementsByTagName('span');
+        var endTime = new Date('10/1/2021 00:00:00');
+        var timer = null;
+        clearInterval(timer);
+        timer = setInterval(countTime, 1000);
+        function countTime() {
+            var nowTime = new Date();
+            var lastTime = parseInt((endTime - nowTime) / 1000);
+            if (lastTime >= 0) {
+                var day = parseInt(lastTime / 60 / 60 / 24);
+                var hour = parseInt(lastTime / 60 / 60 % 24);
+                var min = parseInt(lastTime / 60 % 60);
+                var second = parseInt(lastTime % 60);
+                spans[0].innerHTML = day;
+                spans[1].innerHTML = hour;
+                spans[2].innerHTML = min;
+                spans[3].innerHTML = second;
+            } else {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* 
+            溢出
+            如果子元素的大小超过了父元素,则子元素会从父元素中溢出
+            使用overflow 属性来设置父元素如果处理溢出的子元素
+            可选值
+                visible 默认值,子元素会从父元素中溢出,在父元素的外部显示
+                hidden 溢出的内容会被剪掉
+                scroll 生成2个滚动条,通过滚动条查看完成的内容
+                auto 根据需要生成滚动条
+
+            overflow-x 水平方向
+            overflow-y 垂直方向
+
+            垂直外边距的重叠现象
+                相邻的垂直方向外边距会发生重叠现象
+                兄弟元素
+                    兄弟之间的相邻垂直外边距取两者之间最大的值(正值)
+                特殊情况
+                    一正一负,取两者之和
+                    两个都是负的,取两者中绝对值最大的
+                
+                父子元素
+                    父子相邻的外边距,子元素的会传递给父元素(上外边距)
+                    这个现象我们必须处理
+            
+            行内元素
+                1.行内元素不支持设置宽和高
+                2.可以设置padding,但垂直方向不影响布局
+                3.可以设置margin,但是垂直方向不影响布局
+                4.可以设置border,但是垂直方向不影响布局
+
+            display 用来设置元素显示类型
+                可选值
+                    block 设置为块元素
+                    inline 设置为行内元素
+                    inline-block 设置行内块元素
+                    table 将元素设置为一个表格
+                    none 元素不在页面中显示
+
+            visibility 用来设置元素的显示状态
+                可选值
+                    visible 默认值 元素在页面中正常显示
+                    hidden 元素在页面中隐藏
+
+            display-none 和vibility-hidden 比较,hidden不显示,但是依然占据位置.
+
+
+            盒子模型的标准
+                w3c 标准
+                ie 标准
+
+
+                box-sizing 用来设置盒子模型遵循的标准
+                    可选值
+                        content-box 默认值 w3c标准
+                        border-box ie标准
+
+
+
+         */
+
+         .box{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            margin-bottom: -100px;
+            /* padding-top: 50px; */
+            /* overflow: hidden;
+            display:none; */
+            box-sizing: border-box;
+
+
+            
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            
+        }
+        .idd{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            /* margin:0 auto;
+             */
+             /* margin-top: 50px; */
+            
+        }
+
+        span{
+            width: 90px;
+            height: 100px;
+            /* padding: 100px; */
+            background-color: aquamarine;
+            display: block;
+            display:none;
+        }
+        *{
+            margin: 0;
+        }
+        ul,ol{
+            
+            list-style-type: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <div class="idd"></div>
+    </div>
+    <div class="box1">nien</div> -->
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <br /> 
+    <span>222</span>
+    <span>333</span>
+    <span>444</span>
+    <span>555</span>
+    <br /> 
+    <div class="box">
+
+    </div>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <a href="#">ddddd</a>
+    <br /> 
+    <p>duanli</p>
+    <p>duanli</p>
+    <p>duanli</p>
+    <p>duanli</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

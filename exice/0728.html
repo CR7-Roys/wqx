@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = "我爸是李刚,你敢动我吗";
+        /*  var str="";
+         function fun(arr){
+             if(arr.length>0){
+                 for(var i=arr.length-1;i>=0;i--){
+                     str+=arr.charAt(i);
+                 }
+                 console.log(str);
+             }
+         }
+         fun(arr); */
+
+        /* function fun(arr){
+            if(arr.length>0){
+                var arr1 = arr.split("");
+                for(var i=arr.length-1;i>=0;i--){
+                    console.log(arr1[i]);
+                }
+            }
+        }
+        fun(arr); */
+
+        /*  function fun(arr){
+             if(arr.length>0){
+                 var str=arr.split("").reverse().join("");
+                 console.log(str);
+             }
+         }
+         fun(arr); */
+
+
+        onload = function () {
+            setInterval(FreeTime, 1000);
+        }
+        function FreeTime() {
+            var startTime = new Date();
+            // console.log('现在时间',startTime);
+            var endTime = new Date("10/1/2021 0:0:0");
+            // console.log(endTime);
+            var alls = (endTime - startTime) / 1000;
+            // console.log(alls);
+            if (alls > 0) {
+                var Day = Math.floor(alls / (24 * 60 * 60));
+                var Hour = Math.floor(alls / (60 * 60) % 24);
+                var Minue = Math.floor(alls / 60 % 60);
+                var Seconds = Math.floor(alls % 60);
+                console.log("距离国庆剩余" + Day + "天" + Hour + "时" + Minue + "分" + Seconds + "秒");
+
+            } else {
+                console.log("已结束");
+            }
+        }
+    </script>
+</body>

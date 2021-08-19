@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象
+        // 属性
+        // 方法
+        // 类
+        //     类是对象和方法的属性,
+        //     面向对象里面有命名空间;
+        //     属性都是名词
+        //     每一个类都会有构造函数
+        // 构造
+        // 继承
+        //     原型继承
+        //         什么是原型?我们在开发前都会有原型图,理论上是由ui出,但最早是产品经理,有低保真原型图,高保真原型图
+        //         原型图出来就可以开始布局了,等高保真出来再修修改改,原型图的最终目的是降低成本,原型继承,共用的原型里
+                // 原型属性  prototype ,
+        // 封装
+        // 多态
+        // 抽象
+
+        function Person(name,age){
+            this.name = name;
+            this.age  = age;
+            // this.sayName = function(){
+            //     console.log(111);
+            // }
+        }
+        // function PersonInfo(tel){
+        //     this.tel = tel;
+        // }
+        // var xiaoming = new Person('小明',2);
+        // var xiaomingInfo = new PersonInfo(110);
+
+        // Person.prototype.name = xiaoming
+        Person.prototype.sex = '男';
+        Person.prototype.say=function(){
+            console.log(this.name);
+        }
+        var per =new Person('路飞',22)
+        per.say();
+        //类的继承
+        //子类
+        function Student(name,age,a){
+            this.p = Person;
+            this.p(name,age);
+            this.a = a;
+            // new Person(name,age);
+        }
+        //原型继承
+        Student.prototype = Person.prototype;//继承原型必须继承 父类的原型
+        var stu = new Student('雏田',18,222);
+        console.log(stu);
+        // xiaomingInfo.sayName();
+    </script>
+</body>
+</html>

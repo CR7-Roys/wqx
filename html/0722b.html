@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 超链接就是可以从一个页面跳转到另一个页面
+    或者转到当前的页面的某个部分 -->
+    a标签的属性
+        href 指定跳转的目标路径
+    <!-- 绝对路径 -->
+    <a href="https://www.baidu.com">百度</a>
+<br>
+    <!-- 相对地址(相对路径)
+    ./ 当前文件所在的路径
+    ../当前文件的上一级路径  -->
+    <a href="./01.html">跳跳</a>
+    <a href="#3">跳转到页面的底部</a>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div id="3">ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div>ddd</div>
+    <div id="e">ddd</div>
+    <a href="#" id="footer">回到顶部</a>
+
+
+    <!-- 图片标签
+        属性
+        src 属性指定图片的路径
+        alt 图片的描述,这个描述默认情况下不显示,图片加载不出来的时候会显示信息
+            搜索引擎会根据alt中的内容来识别图片,如果不写,搜索引擎不会收录.
+
+        width 宽度(单位是像素)
+        height 高度
+        如果只设置一个,另一个等比缩放.
+        图片的常用格式
+            jpg(jpeg) 颜色丰富,不支持透明效果,不支持动图
+            png  色彩丰富,支持复杂透明,不支持动画
+            gif  色彩比较单一,支持简单透明,支持动图
+            webp 这种格式是谷歌新推出的专门用来表示网页中的图片的一种格式
+                 具备其他图片格式的苏所有优点,而且文件还特别小.缺点是:兼容性不好
+            base64 将图片使用base64编码,这样可以将图片转换为字符串,通过字符串来引用图片
+            svg 矢量图形,可以任意放大缩小. -->
+
+    <img src="../picture/2.jpg" alt="yyds" width="500px">
+
+    <!-- 内联框架 -->
+    <iframe src="https://www.baidu.com" frameborder="0" width="500" height="500"></iframe>
+
+</body>
+</html>

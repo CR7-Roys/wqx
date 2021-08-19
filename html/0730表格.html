@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background-color: aqua;
+            border-collapse: collapse;
+        }
+        tr,th{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    tr代表是行标签
+    dd代表单元格标签
+    th 表示表头
+    合并单元格: 想要合并单元格就要在元素中添加属性
+        colspan: 合并横向单元格
+        rowspan: 合并纵向单元格
+
+    <table border="1" >
+        <tr>
+            <th colspan="5">学生时间表</th>
+        </tr>
+        <tr>
+            <td>a1</td>
+            <td>a2</td>
+            <td>a3</td>
+            <td>a4</td>
+            <td>a5</td>
+        </tr>
+        <tr>
+            <td>b1</td>
+            <td>b2</td>
+            <td>b3</td>
+            <td>b4</td>
+            <td>b5</td>
+        </tr>
+        <tr>
+            <td>c1</td>
+            <td>c2</td>
+            <td>c3</td>
+            <td>c4</td>
+            <td>c5</td>
+        </tr>
+    </table>
+</body>
+</html>

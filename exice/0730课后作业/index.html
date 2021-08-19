@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        你喜欢的运动是：<input type="checkbox" id="chooseAll" />全选/全不选
+        <br />
+        <input type="checkbox" name="items" value="乒乓球" />乒乓球
+        <input type="checkbox" name="items" value="羽毛球" />羽毛球
+        <input type="checkbox" name="items" value="足球" />足球
+        <input type="checkbox" name="items" value="游泳" />游泳
+        <input type="checkbox" name="items" value="篮球" />篮球
+        <br />
+        <input type="button" id="All" value="全选" />
+        <input type="button" id="NoAll" value="全不选" />
+        <input type="button" id="RedChoose" value="反选" />
+        <input type="button" id="send" value="提交" />
+    </form>
+    <br />
+    <br />
+    <br />
+
+    <table border="1" id="tab">
+        <tr>
+            <th>班级</th>
+            <th>名字</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1班</td>
+            <td>张三</td>
+            <td>99</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>1班</td>
+            <td>李四</td>
+            <td>109</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>6班</td>
+            <td>王五</td>
+            <td>100</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+    </table>
+    <br />
+    <h4>添加新同学</h4>
+    <div>
+        <tr>
+            <td class="word"></td>
+            <td class="ivp">
+                班级：<input type="text" name="clasis" id="clasis" />
+            </td>
+        </tr>
+        <br />
+        <tr>
+            <td class="word"></td>
+            <td class="ivp">
+                名字：<input type="text" name="Name" id="Name" />
+            </td>
+        </tr>
+        <br />
+        <tr>
+            <td class="word"></td>
+            <td class="ivp">
+                成绩：<input type="text" name="grade" id="grade" />
+            </td>
+        </tr>
+        <br />
+        <tr>
+            <td class="word"></td>
+            <td class="ivp">
+                <input type="button" name="add" id="add" value="添加" />
+            </td>
+        </tr>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            //获取多选框items
+            var items = document.getElementsByName("items");
+            //为按钮绑定单击响应函数
+            var all = document.getElementById("All");
+            all.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    //checkbox的checked属性等于true是全选，等于false是不全选
+                    items[i].checked = true;
+                }
+            }
+            var notAll = document.getElementById("NoAll");
+            notAll.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = false;
+                }
+            }
+            var redchoose = document.getElementById("RedChoose");
+            redchoose.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    //判断多选框是否选中
+                    if (items[i].checked) {
+                        items[i].checked = false;
+                    } else
+                        items[i].checked = true;
+                }
+            }
+            var send = document.getElementById("send");
+            send.onclick = function () {
+                for (var i = 0; i < items.length; i++) {
+                    //判断多选框是否选中
+                    if (items[i].checked === true) {
+                        console.log(items[i].value);
+                    }
+
+                }
+            }
+            var chooseAll = document.getElementById("chooseAll");
+            chooseAll.onclick = function () {
+                //设置多选框的选中状态
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = this.checked;
+                }
+
+            }
+            //删除
+            var allA = document.getElementsByTagName("a");
+            for (var i = 0; i < allA.length; i++) {
+                allA[i].onclick = function () {
+                    var tr = this.parentNode.parentNode;
+                    var name = tr.children[0].innerHTML;
+                    var flag = confirm('确认删除'+name+'吗?');
+                    if(flag){
+                        tr.parentNode.removeChild(tr);
+                    }
+                };
+            }
+
+            //添加
+            var add = document.getElementById("add");
+            add.onclick = function () {
+                //获取添加新同学同学的信息
+
+                //获取同学的班别
+                var clasis = document.getElementById("clasis").value;
+                //获取同学的名字
+                var name = document.getElementById("Name").value;
+                //获取同学的成绩
+                var grade = document.getElementById("grade").value;
+                // alert(clasis+","+name+","+grade);
+
+                //需要将获取的信息保存到tr里，创建一个tr
+                var tr = document.createElement("tr");
+                // //创建四个td
+                // var classTd = document.createElement("td");
+                // var nameTd = document.createElement("td");
+                // var gradeTd = document.createElement("td");
+                // var aTd = document.createElement("td");
+                // //创建一个a元素
+                // var a = document.createElement("a");
+                // //创建文本节点
+                // var classText = document.createTextNode("clasis");
+                // var nameText = document.createTextNode("name");
+                // var gradeText = document.createTextNode("grade");
+                // var deleteText = document.createTextNode("删除");
+
+                // //将文本传到td里
+                // classTd.appendChild(classText);
+                // nameTd.appendChild(nameText);
+                // gradeTd.appendChild(gradeText);
+
+                // //将td添加到tr中
+                // tr.appendChild(classTd);
+                // tr.appendChild(nameTd);
+                // tr.appendChild(gradeTd);
+                // tr.appendChild(aTd);
+
+                 // //向a添加文本
+                // a.appendChild(deleteText);
+                // //将a添加到td中
+                // aTd.appendChild(a);
+                tr.innerHTML ="<td>"+clasis+"</td>"+
+                                "<td>"+name+"</td>"+
+                                "<td>"+grade+"</td>"+
+                                "<td><a href='javascript:;'>删除</a></td>";
+                var a = tr.getElementsByTagName("a")[0];
+                a.onclick = allA;
+                            
+                //获取table
+                var tab = document.getElementById("tab");
+                //获取tab下的tbody,不获取的话，添加到table下的就不是亲兄弟
+                var tbody = tab.getElementsByTagName("tbody")[0];
+                //将tr添加到tbody中
+                tbody.appendChild(tr);
+
+                //向a中添加href属性,不然a不能使用
+                a.href = "#";
+                //再给新添加的a绑定单击响应函数
+                a.onclick = function () {
+                    var tr = this.parentNode.parentNode;
+                    var name = tr.children[0].innerHTML;
+                    var flag = confirm('确认删除'+name+'吗?');
+                    if(flag){
+                        tr.parentNode.removeChild(tr);
+                    }
+                    
+                };
+            }
+        };
+    </script>
+</body>
+
+</html>

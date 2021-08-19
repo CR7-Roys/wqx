@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 内边距 padding(填充)
+            边框和内容之间的距离就是内边距
+            padding-top
+            padding-right
+            padding-bottom
+            padding-left
+
+            内边距也会影响盒子大小 
+            背景颜色会延伸到内边距上
+            盒子的大小由内容区,内边距,边框共同决定    
+            padding 简写,可以指定4个内边框
+
+
+        外边距 margin
+            外边距不影响盒子的大小
+            但是会影响盒子的位置
+            margin-top;
+            margin-right
+            margin-bottom
+            margin-left
+
+            如果我们设置左和上外边距,会移动元素本身,如果是右和下,会移动其他元素
+            margin 简写,可以指定4个方向的距离
+
+        元素的水平方向布局
+            元素在父元素水平方向的位置有一下属性共同决定
+            margin-left
+            border-left
+            padding-left
+            width
+            padding-right
+            border-right
+            margin-right
+
+            这7个值相加,必须等于父元素的宽度
+            如果灯饰不成立,称为过度约束,则灯饰会自动调整
+            调整的情况
+                如果这7个值,没有auto,则调整margin-right
+                有三个值可以设置auto
+                width
+                margin-left
+                margin-right
+                    如果某个值设置为auto,则会自动调整auto值,使等式成立
+
+                    如果一个宽度和一个外边距是auto值,则宽度值最大,设为auto的外边距会设为0
+
+                    如果3个都是auto,则外边距是0,宽度最大
+
+                    如果两个外边距auto,宽度固定,则会将外边距设置为相同的值
+                    
+                    margin:0 auto;水平居中
+
+
+        */
+        
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            border: 10px solid rgb(200, 100, 200);
+            overflow: hidden;
+            margin:100px auto;
+            /* 圆角边框 */
+            border-radius: 5px 
+        }
+        .box1{
+            width: 80px;
+            height: 80px;
+            background-color: aqua;
+        }
+        .idd{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(43, 92, 226);
+            margin: 40px auto;
+            border: 10px double rgba(100, 200, 50, 0.9);
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="idd"> ckk</div>
+    </div>
+    <div class="box1">nien</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(226, 99, 14);
+            position: absolute;
+        }
+        #box2{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(14, 226, 60);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box2"></div>
+    <div id="box"></div>
+    <div class="text"></div>
+    <script>
+        var box = document.getElementById('box');
+        var test = document.querySelector('.test');
+        var isOn =false;
+        box.onclick = function(){
+        //event响应对象,ie8,响应函数处理时候,浏览器不会传递事件对象,
+        //而是将对象作为window对象的属性保存
+        document.onmousemove = function (event) {
+            //判断event,解决事件对象的兼容问题
+            // if(event){
+            //     event = window.event;
+            // }
+            event = event || window.event;
+            var x = event.pageX;
+            var y = event.pageY;
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+            }
+        }
+        var box2 = document.querySelector('.box2');
+        box2.onclick=function(event){
+            event.cancelBubble = true;
+        }
+        //    // //获取滚动条的距离
+        //    var st= document.body.scrolltop||document.documentElement.scrollTop;
+        //     var sl = document.body.scrollLeft||document.documentElement.scrollLeft;
+        //     // document.body.onscroll = function(){
+        //     //     console.log(ddd);
+        //     // }
+
+        //     if(isOn){
+        //        box.style.left = x + "px";
+        //         box.style.top = y + "px"; 
+        //     }
+            
+        // }
+        // box.onclick = function(event){
+        //     isOn = ture;
+        // }
+    </script>
+</body>
+
+</html>

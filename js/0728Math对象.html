@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Math常用方法:
+    Math 和其他对象不同,他不是一个构造函数
+
+    Math.ceil()
+        一个对一个数向上取整
+    Math.floor()
+        可以对一个数向下取整
+
+    Math.round()
+        四舍五入
+
+    Math.random()
+        生成一个0到1之间的随机数
+
+    例子: //0-10的随机数
+        console.log(Math.round(Math.random()*10));
+        //x-y的随机数
+        console.log(Math.round(Math.random()*(y-x)+x));
+
+    max() 获取多个数值的最大值
+    min() 获取多个数值的最小值
+        例子:console.log(Math.max(14,25,1));
+
+    Math.pow(x,y) 返回x的y次幂
+        例子:console.log(Math.pow(2,3));
+
+    Math.sqrt() 用于对一个数开放运算
+        例子: console.log(Math.sqrt(4));
+      
+
+
+
+    <script>
+        //0-10的随机数
+        // console.log(Math.round(Math.random()*10));
+        // //x-y的随机数
+        // console.log(Math.round(Math.random()*(y-x)+x));
+        // console.log(Math.max(14,25,1));
+        // console.log(Math.pow(2,3));
+        console.log(Math.sqrt(4));
+
+    </script>
+</body>
+</html>

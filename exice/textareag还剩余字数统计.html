@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textarea还剩余字数统计</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 100px;
+            position: relative;
+        }
+        #text{
+            width: 300px;
+            height: 100px;
+        }
+        span{
+            position: absolute;
+            right: 6px;
+            bottom: 4px;
+        }
+        #bl{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <textarea id="text" maxlength="50" placeholder="textarea还剩余数字统计" autofocus></textarea>
+        <!-- <var> 标签表示变量的名称 -->
+        <span><var id="bl">50</var>/50</span>
+    </section>
+    <script>
+        var sy=0;
+        var F =function(){
+            this.text=document.getElementById('text');
+            this.bl=document.getElementById('bl');
+            this.maxlen = this.text.getAttribute('maxlength');
+        } 
+        console.log(this.maxlen);
+        console.log(this.text);
+        console.log(this.bl);
+        F.prototype.leng=function(){
+            this.length = this.text.value.length;
+        }
+        F.prototype.curLength = function(sy){
+           sy = this.maxlen-this.text.value.length;
+           this.bl.innerText=sy;
+        }
+        console.log(sy);
+        var s = new F();
+        this.text.onkeyup = function(){
+            s.leng ();
+            s.curLength();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(173, 17, 17);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn01">ddd</button>
+    <button id="btn02">dsssssdd</button>
+    <br>
+    <br>
+    <div id="box"> </div>
+    <script>
+        var box = document.getElementById('box');
+
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function () {
+            //通过js修改元素的样式
+            box.style.width = "300px";
+            box.style.height = "300px";
+            box.style.backgroundColor = "yellow"
+        }
+        var btn02 = document.getElementById('btn02');
+        btn02.onclick = function () {
+            
+           //获取元素当前的显示样式(只支持IE且只读)
+        //    语法:元素.currentStyle.样式名
+                // 如果当前元素没有设置该样式,则获取他的默认值
+        //    console.log(box.currentStyle.width); 
+
+        // console.log(getComputedStyle(box,null).width);
+        // console.log(getStyle(box,'width'));
+        obj.currentStyle.width= '500px';
+
+        // 虎丘指定元素的当前样式
+        //     参数
+        //         obj 要获取样式的元素
+        //         name 要获取的样式名
+            
+            // 返回值 指定的样式值
+        
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+
+        }
+    </script>
+</body>
+
+</html>

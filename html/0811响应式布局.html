@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100%;
+            height: 200px;
+            background-color: rgb(83, 216, 22);
+        }
+        @media only screen and (max-width:992px) and (min-width:768px) {
+            body{
+                background-color: rgb(201, 14, 207);
+
+            }
+            div{
+            background-color: gold;
+        }
+        }
+        @media only screen and (min-width:992px) {
+            body{
+                background-color: rgb(236, 132, 13);
+            }
+            div{
+            background-color: rgb(78, 13, 197);
+        }
+        }
+      
+    </style>
+</head>
+<body>
+    <!-- 响应式布局的关键,就是谋体查询
+    通过媒体查询,可以为不同的设备,或设备的不同状态来分别设置样式
+
+    语法 @media 查询规则{}
+        媒体类型
+            all 所有设备 
+            print 打印设备
+            screen 带屏幕的设备
+            speech 屏幕阅读器
+                可以使用,连接多个媒体类型,这样他们的关系是一个或的关系
+
+        媒体特性
+            width 视口的宽度
+            height 视口的高度
+
+            min-width 最小宽度
+            max-width 最大宽度
+
+        一般常用的分界点
+            小于768 超小屏幕
+            大于768 小屏幕
+            大于992 中型屏幕
+            大于1200 大屏幕
+        
+        逗号是或,not是非
+
+    -->
+  <div></div>
+</body>
+</html>

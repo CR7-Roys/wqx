@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--   
+    call()和apply()
+    这两个都是函数对象的方法,需要通过对象来调用
+    当对函数调用这两个方法的时候,函数都会执行
+    他们的作用是用来改变函数执行的this指向
+    他们可以将一个对象作为第一个参数调用,此时,this执行该参数的对象
+
+    他们两个的区别
+        call 方法可以将实参在对象之后依次传递
+        apply 方法需要将实参封装到一个数组中统一传递
+
+    this指向的情况
+    1.以函数调用的时候,this永远是window
+    2.以方法的形式调用,this指向调用方法的对象
+    3.以构造函数调用,this指向新创建出来的对象
+    4.使用call和apply调用,this是指定的那个对象
+
+        例如: function fun(a,b){
+                console.log(a,b);
+                console.log(this);
+            }
+            var obj ={
+                name:"路飞",
+                sayName:fun
+            }
+            var obj1 ={
+                name:"鸣人",
+                sayName:fun
+            }
+            obj.sayName.call(obj);
+            obj.sayName.apply(obj1,[3,4]);
+            fun.call({});
+        
+        在函数调用的时候,都会传递两个隐藏的参数
+        
+        this
+        arguments 是一类数组对象
+            它会保存调用函数时候传入的所有实参
+            
+            callee 这个属性对应一个函数对象,
+            我们调用的是谁,就是谁
+
+ -->
+    <script>
+        function fun(){
+            // console.log(a,b);
+            // console.log(this);
+            console.log(typeof arguments);//检查类型
+            console.log(Array.isArray(arguments));//检查类型
+            console.log(arguments);
+            arguments.callee;
+            var sum=0;
+            for(var i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+                
+            }
+            console.log(sum);
+
+        }
+        var obj ={
+            name:"路飞",
+            sayName:fun
+        }
+        var obj1 ={
+            name:"鸣人",
+            sayName:fun
+        }
+        fun.call(obj1,10,20,30,40,50)
+        // obj.sayName.call(obj);
+        // obj.sayName.apply(obj1,[3,4]);
+        // fun.call({});
+    </script>
+</body>
+</html>

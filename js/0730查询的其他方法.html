@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    获取body元素
+    var body = document.body;
+    获取页面中的html标签
+    var html = document.documentElement;
+
+    获取所有的元素
+    var all = document.all;
+
+    可以传递一个选择器作为参数,该方法总是返回一个唯一的元素
+    var box = document.querySelector('.box');
+    
+    这个是选择全部
+    var box1 = document.querySelectorAll('.box1');
+
+
+    <div class="box1">1</div>
+    <div class="box1">2</div>
+    <div class="box1">3</div>
+    <div class="box1">4</div>
+    <div class="box1">5</div>
+    <script>
+        // var body = document.body;
+        // var html = document.documentElement;
+    // var all = document.all;
+    var box = document.querySelector('.box1');
+    var box1 = document.querySelectorAll('.box1');
+    var box2 = document.getElementsByTagName('div');
+    console.log(box1,box2);
+
+    </script>
+</body>
+</html>

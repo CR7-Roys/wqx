@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">路飞</div>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <img src="" alt="图片裂了">
+    <div id="btn_list">
+
+    </div>
+    <script>
+        
+   /*      var box = $('#box');
+        // 设置样式
+        box.css('width','200px');
+        // 获取样式
+        var w = box.css('width');
+        // 获取文本内容
+        var txt = box.text();
+        // 设置文本内容
+        box.text('要设置的内容')
+        console.log(txt);
+
+        var list = $('.list')
+        list.addClass('a')
+        // list.removeClass('list')
+
+        var li = $('.list > li:eq(0)')
+        console.log(li);
+
+        var img = $('img')
+        var alt = img.attr('alt','新的内容')
+
+        console.log(alt); */
+
+        var imgArr = ['https://img1.baidu.com/it/u=3687261431,409460330&fm=26&fmt=auto&gp=0.jpg','https://img0.baidu.com/it/u=3050243352,3998396149&fm=26&fmt=auto&gp=0.jpg','https://img1.baidu.com/it/u=4283896922,2250129786&fm=26&fmt=auto&gp=0.jpg']
+        var img = $('img');
+        img.attr('src',imgArr[0]);
+        var btnList = document.getElementById('btn_list');
+        for(var i=0;i<imgArr.length;i++){
+            var btn = document.createElement('button')
+            btn.innerHTML = i+1
+            btnList.appendChild(btn)
+        }
+        // var btnArr = document.getElementsByTagName('button')
+        // for(var i=0;i<btnArr.length;i++){
+        //     btnArr[i].index = i
+        //     btnArr[i].onclick = function(){
+        //         img.attr('src',imgArr[this.index])
+        //     }
+        // }
+
+        var btnArr = $('button');
+            btnArr.map(function(index){
+               $(this).click(function(){
+                   img.attr('src',imgArr[index])
+               })
+            })
+
+        // var box = $('#box');
+        // box.click(function(){
+        //     console.log(2222);
+        // })
+        // box.click(function(){
+        //     console.log(1111);
+        // })
+
+        // box.on('click',function(){
+        //     console.log(333333333);
+        // })
+        // box.on('click',function(){
+        //     console.log(4444444444);
+        // })
+        // box.mouseover(function(){
+        //     console.log('经过');
+        // }).mouseout(function(){
+        //     console.log('离开');
+        // })
+
+        // box.hover(function(){
+        //     console.log('经过');
+        // },function(){
+        //     console.log('离开');
+        // })
+    
+        
+    </script>
+</body>
+</html>

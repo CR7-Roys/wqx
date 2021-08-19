@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #dakuang {
+            width: 985px;
+            height: 616px;
+            position: relative;
+            margin: 100px;
+            overflow: hidden;
+        }
+        ul {
+            width: 985px;
+            height: 616px;
+            list-style: none;
+            position: absolute;
+        }
+
+        li {
+            width: 985px;
+            height: 616px;
+            float: left;
+            position: absolute;
+            /* z-index: 10; */
+        }
+        #nav {
+            position: absolute;
+            left: 40%;
+            bottom: 5%;
+            /* z-index: 12; */
+        }
+
+        #nav a {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(236, 156, 8);
+            float: left;
+            margin: 0 10px;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
+        #nav a:hover {
+            background-color: red;
+        }
+
+        .btn {
+            width: 40px;
+            height: 70px;
+            position: absolute;
+            top: 50%;
+            opacity: 0.5;
+            /* z-index: 12; */
+        }
+
+        #lef {
+            left: 0px;
+        }
+
+        #rig {
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dakuang">
+        <ul>
+            <li class="tp hy">
+                <img src="./image/hy.jpg" alt="火影忍者">
+            </li>
+            <li class="tp">
+                <img src="./image/hy1.jpg" alt="火影忍者">
+            </li>
+            <li class="tp">
+                <img src="./image/hy3.jpg" alt="火影忍者">
+            </li>
+            <li class="tp">
+                <img src="./image/hy4.jpg" alt="火影忍者">
+            </li>
+            <li class="tp">
+                <img src="./image/hy5.jpg" alt="火影忍者">
+            </li>
+            <li class="tp">
+                <img src="./image/hy2.jpg" alt="火影忍者">
+            </li>
+        </ul>
+        <div id="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+        <button type="button" class="btn" id="lef"><</button>
+        <button type="button" class="btn" id="rig">></button>
+    </div>
+    <script>
+        var da = document.getElementById('dakuang');
+        var ul = document.getElementsByTagName('ul');
+        var imgAll = document.getElementsByTagName('img');
+        var tps = document.getElementsByClassName('tp');
+        var index = 0;
+        ul.style.width = 985 * imgAll.length + "px";
+        var allA = document.getElementsByTagName('a');
+        allA[index].style.backgroundColor = "red";
+        for (var i = 0; i < allA.length; i++) {
+            allA[i].num = i;
+            allA[i].onclick = function () {
+                index = this.num;
+                ul.style.left = -985 * index + "px";
+            }
+        }
+        var lefbtn = document.getElementById('lef');
+        var rigbtn = document.getElementById('rig');
+        var clearActive = function () {
+            for (var i = 0; i < tps.length; i++) {
+                tps[i].className = 'tp';
+            }
+        }
+        var goIndex = function () {
+            clearActive();
+            tps[index].className = 'tp hy';
+        }
+        var rig = function () {
+            index++;
+            goIndex();
+        }
+        rigbtn.addEventListener('click', function () {
+            rig();
+        })
+    </script>
+</body>
+
+</html>

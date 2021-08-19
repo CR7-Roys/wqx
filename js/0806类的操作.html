@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b1{
+        width:100px;
+        height:100px;
+        background-color: rgb(30, 46, 190);
+    }
+    .b2{
+       
+        height:300px;
+        background-color: rgb(28, 231, 62);
+        
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">修改box样式</button>
+    <button id="btn2">删除box样式</button>
+
+    <br />
+    <div id="box" class="b1 b2"></div> 
+    <script>
+        var btn = document.getElementById('btn'),
+            // btn2 = document.getElementById('btn'),
+            box = document.getElementById('box');
+        btn.onclick=function(){
+            // if(!hasClass(box,'b2')){
+            //     box.className += "b2";
+            // }else{
+            //     delClass(box,'b2');
+            // }
+            addClass(box,'b2');
+        }
+        function addClass(dom,name){
+            if(!hasClass(dom,name)){
+                dom.className +=" "+name;
+            }
+        }
+        //name 是判断class的
+        function hasClass(dom,name){
+            //自变量里面不能用变量
+            // var reg = /name/
+            var reg = new RegExp("\\b"+name+"\\b");
+            return reg.test(dom.className);
+
+        }
+        function delClass(dom,name){
+            var reg = new RegExp("\\s*\\b"+name+"\\b\\s*");
+            dom.className = dom.className.replace(reg,"");
+            // return reg.test(dom.className);
+        }
+        function toggleClass(dom,name){
+            if(!hasClass(dom,name)){
+                addClass(dom,name);
+            }else{
+                delClass(dom,name);
+            }
+        }
+    </script>
+</body>
+</html>

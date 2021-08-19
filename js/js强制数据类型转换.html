@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 强制类型转换
+            将一个数据类型转换成其他数据类型
+            转换为 string,number,boolean
+            
+            将其他数据类型转换成字符串
+                方式一
+                    调用被转换类型的toString()方法
+                    该方法不会影响原变量,他会将转换的结果返回
+                    注意:null 和 undefined都没有toString方法
+                    如果调用就报错
+                方式二
+                    调用String()函数,并将要转换的诗句作为参数传递给函数
+                    对于number和Boolean来说,实际上就是调用toString方法
+
+            将其他数据类型转换number类型
+                方式一:
+                    使用number函数
+                        字符串-->数字
+                            1.如果是纯数字的字符串,则转换为数字
+                            2.如果有非数字的内容,则转换成NaN
+                            3.如果是空串或任意空格组成字符串,则转换为0
+                        布尔-->数字
+                            true 转成 1
+                            false 转成 0
+                        null --> 0
+                        undefined -->NaN
+                方式二
+                    这种方式专门用来对付字符串
+                        parseInt()把一个字符串转成一个整数
+                        parseFloat()把一个字符串转为一个有效的浮点数
+                    他们的第二个参数,可以指定数字的进制
+
+
+            将其他的类型转换成布尔
+                使用Boolean()函数
+                    数字 -->布尔
+                        除了0和NaN其余都是true
+                    字符串 -->布尔
+                        除了空串其余都是true
+                    undefined 和 null都是false
+             */
+        /* var a = 123;
+        var b = a.toString(); 调用方法 */
+
+       /*  var a=null;
+        var b=String(a); */
+
+       /*  十六进制 0x开头
+        var b=0xff;
+
+        八进制 0开头
+        var b=080;
+        
+        二进制 0b开头
+        var b=0b10;
+        要注意八进制
+        b=parseInt(b,8); */
+
+
+        console.log(b, typeof b);
+    </script>
+</body>
+
+</html>

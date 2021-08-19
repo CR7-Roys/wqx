@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(57, 218, 17);
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(194, 169, 26);
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(228, 125, 8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var box1 = document.querySelector('.box1');
+        var box2 = document.querySelector('.box2');
+        box.addEventtListener(box, 'click', function () {
+
+            this.innerHhtml = 'box';
+        })
+        box.addEventtListener(box1, 'click', function () {
+
+            this.innerHhtml = 'box1';
+        })
+        box.addEventtListener(box2, 'click', function () {
+
+            this.innerHhtml = 'box2';
+        })
+        //微软公司,认为事件的传播是由里向外,网景公司认为事件的传播是由外向里
+        事件传播的3个阶段
+            1.捕获阶段
+                从外层的祖先元素,向目标元素进行事件的捕获,但是此时不会触发事件
+            2.目标阶段
+                事件捕获到目标元素,捕获结束后开始在目标元素上触发事件
+            3.冒泡阶段
+                事件从目标元素向它的祖先元素传递依次触发祖先元素上的事件
+        function bindEvent(obj, eventName, callback) {
+            if (obj.addEventtListener) {
+                obj.addEventListener(eventName, callback, false);
+            } else {
+                obj.attachEvent('on' + eventName, function () {
+                    callback.call(obj);
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

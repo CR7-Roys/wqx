@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+    .btn_list {
+        background-color: #e5eecc;
+        padding: 7px;
+        border: solid 1px #c3c3c3;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+    }
+    li{
+        cursor: pointer;
+    }
+    .on{
+        color: gold;
+    }
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <ul>
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+    </ul>
+   <div class="content">lufen </div>
+
+    <script>
+        var textArr=['路飞','索隆','娜美']
+       var li = $('li');
+       var div = $('.content');
+       li.map(function(index){
+           $(this).on('click',function(){
+                div.text(textArr[index]);
+                li.map(function(){
+                    $(this).removeClass('on');
+                })
+                $(this).addClass('on');
+           })
+       })
+
+    </script>
+</body>
+</html>

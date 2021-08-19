@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(163, 148, 148);
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="box">
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        document.onkeydown = keyDown;
+        // 方向键控制元素移动函数
+        function keyDown(event) { 
+            var event = event || window.event;
+             var speech = 5;
+
+              if(event.shiftKey){
+                    speech = 100;
+             }else{
+                 speech=5;
+             }
+            switch (event.keyCode) {
+                 // 按下左箭头键，向左移动5个像素
+                case 37: 
+                    box.style.left = box.offsetLeft - speech + "px";
+                    break;
+                 // 按下右箭头键，向右移动5个像素
+                case 39: 
+                    box.style.left = box.offsetLeft + speech + "px";
+                    break;
+                 // 按下上箭头键，向上移动5个像素
+                case 38: 
+                    box.style.top = box.offsetTop - speech + "px";
+                    break;
+                 // 按下下箭头键，向下移动5个像素
+                case 40:
+                    box.style.top = box.offsetTop + speech + "px";
+                    break;
+            }
+            return false
+        }
+       
+    </script>
+</body>
+
+</html>

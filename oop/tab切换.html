@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tab{
+            border: 1px solid red;
+            background-color: salmon;
+        }
+        #tab div {
+            display: none;
+            height: 100px;
+            background-color: rgb(206, 158, 158);
+        }
+        #tab div.on{
+            display: block;
+        }
+        #tab button.on{
+            background-color: rgb(21, 212, 226);
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <button class="on">按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <div class="on">选项1</div>
+        <div>选项2</div>
+        <div>选项3</div>
+<!-- 
+
+    写面向对象的要求
+        1.不能使用变量 var 
+        2.不要使用普通函数
+        3.要使用prototype,构造函数
+ -->
+ <script>
+     function Tabfun(id){
+         //获取属性
+        this._tab = document.getElementById(id);
+        this._btn = this._tab.querySelectorAll('button');
+        this._div = this._tab.querySelectorAll('div');
+        console.log(this._div);
+        //循环按钮
+        for(var i = 0; i<this._btn.length;i++){
+            this._btn[i].that = this;
+            this._btn[i].index = i;
+            this._btn[i].onclick = function(event){
+              event.target.that._change(event.target);
+            }
+        }
+     }
+     Tabfun.prototype._change = function(obj){
+        for(var j=0;j<this._div.length;j++){
+             this.div[j].classList.remove('on');
+          }
+     }
+     new Tabfun('tab');
+ </script>
+    </div>
+</body>
+</html>

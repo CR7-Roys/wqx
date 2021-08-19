@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(230, 100, 25);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text" name="user_name">
+    <script>
+        var box = document.querySelector('.box');
+        // onmousewheel 鼠标滚轮事件,会在滚动滚轮时候触发,但是火狐不支持
+        //
+       /*  box.onmousewheel = function(){
+            console.log(24334);
+        } */
+        // addEventListener('DOMMouseScroll',function(){
+        //     console.log(22222);
+        // });
+        console.log(box.onwheel);
+        box.onwheel = function(){
+            var Height = parseInt(getComputedStyle(box,'').height);
+            this.style.height = event.wheelDelteY>0 ? (Height-10)+'px' :(Height+10)+'px';
+
+           /*  if(event.wheelDelteY>0){
+                this.style.height = (Height-10)+'px';
+            }else{
+                this.style.height = (Height+10)+'px';
+            } */
+        }
+        function _scroll(obj,callback){
+            if(obj.onwheel!==undefined){
+                obj.onwheel=callback;
+            }else{
+                obj.onmousewheel = callback;
+            }
+        }
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+       /*  除了key值,事件对象中还提供了几个属性
+            altkey
+            ctrlkey
+            shiftKey
+                这三个主要是用来判断3个键是否被按下
+                如果按下就返回true,否则返回false 
+        document.onkeydown = function(e){
+            console.log(e);
+        }*/
+        /* document.onkeyup = function(){
+            console.log('down');
+        } */
+        var input = document.getElementsByName('user_name')[0];
+        //不能输数字,通过键盘控制文本框限制不能输入数字或其他或字母
+        input.onkeydown = function(event){
+            // console.log(+event.key);
+            if(!isNaN(+event.key)){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  一.算数运算符
+                 当对于非number类型进行运算时,会将这些值转换为Number类型,
+                 然后运算任何值和NaN做运算,都返回NaN.
+ 
+                 对于字符串类型,则不转换为Number,和它相邻的类型会先转换成字符串,
+                 然后再进行并串(+号的功能)
+ 
+             +
+             -
+             *
+             /
+             % 取模运算(取余数)   
+             
+             二.一元运算符
+                + 正号
+                    对数字不会产生任何影响
+                - 负号
+
+                我们可以使用 + 将其他的数据类型转换成Number
+            
+            三.自增,自减
+                ++
+                    分两种,前++和后++
+                    不管哪种,都会使原来的变量值相加1
+                    a++的值等于原变量(自增前的值)
+                    ++a的值等于新值(自增后的值)
+            
+            四.逻辑运算符
+                && 与
+                || 或
+                !  非
+
+                可以通过!!实现任意数据类型转换成布尔值
+
+            五.赋值运算符
+                =
+                +=
+                -=
+                /=
+                %=
+                *=
+            
+            六.关系运算符
+                >    
+                <
+                >=
+                <=
+                对于非数值的比较,会将其转换成数字,然后再比较
+                任何的值和NaN作比较,都会返回false
+                如果两边都是字符串,不会将其转换为数字
+                而是分别比较字符串的Unicode编码
+
+
+            七.相等运算符
+                ==相等
+                ===全等 (要求类型一样)
+                    用来半段两个值是否全等.
+                    如果类型不一样,直接返回false
+                !=不等
+                !==不全等
+                    用来半段两个值是否全等.
+                    如果类型不一样,直接返回false
+                
+                
+                
+                undefined==null 返回true
+                undefined===null 返回false
+                NaN不和任何值相等,包括自己
+
+                可以通过isNaN()函数判断一个值是否为NaN
+            
+            八.三元运算符
+                语法
+                    条件表达式 ? 语句1 : 语句2
+
+
+
+             js是不支持换行的
+         */
+
+        var a = 7 || 5 && 9;
+        console.log(a);    
+
+        // var result=+"11">"3";
+        // console.log(undefined==null);
+
+        /* var a = "123";
+        var b = a + 123;
+        b = true + "hello"; */
+        //    隐式数据类型转换
+      /*   b = 222;
+        b = b + "";
+        b = 1 + 2 + "3";
+        b = "1" + 2 + 3; */
+        /* b=1 + + "2" + 3;
+        console.log(b, typeof b); */
+        
+    </script>
+</body>
+
+</html>

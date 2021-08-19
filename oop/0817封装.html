@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="show">显示</button>
+        <button id="hide">隐藏</button>
+        <img id="image" src="https://zhaopin-c.bj.bcebos.com/banner/qiuzhao.png" alt="haha">
+        <img id="image" src="https://zhaopin-c.bj.bcebos.com/banner/qiuzhao.png" alt="haha">
+
+    </div>
+    <!-- 
+        仿jq 第一步,封装$
+        封装的好处
+            1.简化代码
+            2.实现diy diy是自定义数组
+            3.尽量不要暴露代码
+
+        要封装到原型里去,HTMLElenebt是所有html元素的老祖宗
+     -->
+     <script>
+        //  var $ = function(seLect){
+        //      return document.querySelector(select);
+        //  }
+        // HTMLElement.prototype.hide =function(){
+        //     this.style.display = 'none';
+        // }
+        // $('#hide').onclick = function(){
+        //     $('img').hide();
+        // }
+
+          var $ = function(select){
+             return document.querySelector(select);
+         }
+        // var F =function(id){
+        //     this.element =document.getElementById(id);
+        // }
+        // F.prototype.hide = function(){
+        //     this.element.style.display = 'none';
+        // }
+        // $('#hide').onclick=function(){
+        //     new F('image').hide();
+        // }
+
+        var $ = function(select){
+            return new F(select);
+        }
+        var F = function(id){
+            this.getElementById(id);
+        }
+        F.prototype.getElementById = function(select){
+            this.element = document.querySelectorAll(select)
+        }
+        F.prototype.hide = function(){
+            for(var i=0;i<this.element.length;i++){
+                this.element[i].style.display = 'none';
+            }
+        }
+        // 1.为选择到的所有元素绑定事件
+        F.prototype.show = function(){
+            for(var i=0;i<this.element.length;i++){
+                 this.element[i].style.display = 'inline';
+            }
+        }
+        F.prototype.on = function(eName,callback){
+            this.element[0].addEventListener(eName,callback);
+        }
+        //2.类的操作封装,包括,新增,移出,替换
+        //3.封装jquery的hover方法
+        $('#hide').on('click', function(){
+            $('img').hide();
+        })
+        $('#show').on('click', function(){
+            $('img').show();
+        })
+     </script>
+</body>
+</html>

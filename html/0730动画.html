@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+
+            background-color: rgb(221, 107, 13);
+        }
+        .box1{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(23, 207, 115);
+            margin-left: 0;
+            /* transition 过渡
+            需要注意的是:过渡必须是一个有效值到另一个有效值的过渡
+                transition-property 要执行过渡的属性
+                transition-durtion 指定过渡效果持续的时间
+                transition-timing-function: 过度的函数
+                    可选值
+                    ease 默认值,慢速开始,然后加速,再结束
+                    ease-in 加速
+                    ease-out 减速
+                    ease-in-out先加速后减速
+                    linear 匀速运动
+                    这是方法
+                    cubic-bezier() 贝塞尔曲线
+                    steps() 分布执行过渡效果
+
+                    transition-delay 过渡的延迟
+
+            transition 的简写
+                第一个时间代表前一个,后一个时间代表后一个
+
+            */
+            transition-property: all;
+            transition-duration: 3s;
+            transition-timing-function: ease-in;
+        }
+        .box2{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(23, 207, 115);
+            margin-left: 0;
+            margin-top: 20px;
+            transition-property: all;
+            transition-duration: 3s;
+            transition-timing-function: ease-out;
+            }
+        .box:hover .box1, .box:hover .box2{
+            margin-left: 400px;
+            margin-top: 400px;
+            background-color: #fff;
+
+        }
+        .xiaotu{
+            margin: 0 auto;
+            width: 132px;
+            height: 271px;
+            background-image: url(../picture/bigtap-mitu-queue-big.png);
+            transition: all 0.3s steps(3);
+       
+            cursor: pointer;
+
+        }
+        .xiaotu:hover{
+            background-position: -396px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="xiaotu">
+    
+    </div>
+
+</body>
+</html>

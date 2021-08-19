@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(){
+            console.log(this.name);
+        }
+        function Person(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.sayName=fun;
+        }
+        function fun(){
+            console.log(11);
+        }
+        var per=new Person('佐助',20,'男');
+        var per1=new Person('小樱',20,'女');
+        per.sayName();
+        per1.sayName();
+
+
+
+        function My(name){
+            this.name=name;
+        }
+        //原型属性prototype可以构造分离
+        My.prototype.abc=123
+         var my = new My('梅老板')
+        cosole.log(my)
+        
+    </script>
+</body>
+</html>

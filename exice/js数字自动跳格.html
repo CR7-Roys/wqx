@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>代码 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #wrap {
+            margin: 101px auto;
+            width: 300px;
+        }
+
+        #wrap input[type=text] {
+            width: 20px;
+            height: 20px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <input id="t1" size="50" maxlength="1" type="text" autofocus />
+        <input id="t2" size="50" maxlength="1" type="text" />
+        <input id="t3" size="50" maxlength="1" type="text" />
+        <input id="t4" size="50" maxlength="1" type="text" />
+        <input id="t5" size="50" maxlength="1" type="text" />
+        <input id="t6" size="50" maxlength="1" type="text" />
+        <script>
+            var inputs = document.getElementsByTagName('input');
+            // var index = null;
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].index = i;
+                inputs[i].onfocus = function () {
+                    _key(this,inputs);
+                }
+            }
+            function _key(obj,inputs){
+                obj.onkeydown = function (event) {
+                        var reg = /\d|Backspace/;
+                        var result = reg.test(event.key);
+                        if (!result) {
+                            return false;
+                        }
+
+                    }
+                obj.onkeyup = function () {
+                        var index = obj.index + 1;
+                        if(index<inputs.length&&obj.value){
+                            inputs[index].focus();
+                        }
+                        var str = isOver(inputs);
+                        if(str.length===inputs.length){
+                            alert('你输入的内容是:'+str)
+                        }
+                    }
+            }
+            function isOver(inputs){
+                var str='';
+                for(var i=0;i<inputs.length;i++){
+                    str+=inputs[i].value;
+                }
+                return str;
+            }
+            // var inputs = document.getElementsByTagName('input');
+            // var t1 = document.getElementById('t1');
+            // var t2 = document.getElementById('t2');
+            // var t3 = document.getElementById('t3');
+            // var t4 = document.getElementById('t4');
+            // var t5 = document.getElementById('t5');
+            // var t6 = document.getElementById('t6');
+
+            //     t1.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+            // t2.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+            // t3.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+            // t4.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+            // t5.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+            // t6.onkeydown = function(event){
+            //     if(isNaN(+event.key)){
+            //         return false;
+            //     }
+            // }
+        </script>
+</body>
+
+</html>

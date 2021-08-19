@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a {
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+
+            /* 浮动,可以使一个元素向父元素的左边or右边移动 
+                使用float设置浮动
+                    可选值
+                     none默认值,元素不浮动
+                     left
+                     right 
+
+                元素设置浮动后,水平布局的等式便不需要强制成立
+
+                浮动特点
+                    1.元素浮动后,完全脱离文档流,不再占用文档流的位置
+                    2.元素浮动不会移出父元素
+                    3.如果浮动元素的上边是一个没有浮动的块元素(行内元素不可以),则浮动元素无法上移
+                    4.如果浮动元素的父元素宽度不够,浮动元素会往下掉,和文字的特点是一个的.
+                    5.浮动元素不会超过他上边的浮动兄弟,只能是一样高度
+                    6.浮动元素不会盖住文字,(文字环绕图片效果)
+
+                简单总结
+                    浮动主要作用就是让页面中块元素可以水平排列
+
+                脱离文档流后的特点
+                    块元素
+                        1.不独占一行
+                        2.宽度和高度默认都是被内容撑开
+                    行内元素
+                        1.行内元素脱离文档流后会变成块元素
+
+                脱离文档流后,不需要区分行内元素和块元素
+
+
+            */
+        }
+
+        .b {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            float: left;
+
+        }
+
+        .c {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        熹园坐落于江西省婺源县紫阳镇汤村街边，这里古树掩映、面水依山，此地原名“朱家庄”，是朱熹二世祖、三世祖居住的地方。熹园虽说是在原址上复建的，但也高度还原了古代园林的意蕴，可列入园林造山的佳作。
+    </div>
+    <div class="b"></div>
+    <div class="c"></div>
+</body>
+
+</html>

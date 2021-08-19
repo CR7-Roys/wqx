@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            文档流在网页中最底层的一层
+                元素主要有两种状态
+                    在文档流中
+                    不在文档流中(脱离文档流)
+
+                元素在文档流中的特点
+                    块元素
+                        1.块元素在页面中独占一行,自上向下垂直排列
+                        2.默认宽度是父元素的全部
+                        3.默认高度是被内容撑开(子元素)
+
+                    行内元素
+                        1.行内元素不会独占一行,只占自身大小
+                        2.在页面中从左向右水平排列,如果一行之中不能容纳下所有元素,会另起一行,进行从左向右排列
+                        3.宽度和高度是被内容撑开的
+
+在HTML中，标签分为：文本级和容器级；
+文本级：p、span、a、b、i、u、em
+容器级：div、h系列、li、dt、dd
+温馨小提示：
+(1).容器级的标签，里面可以放置任何东西；文本级的标签里面，只能放置文字、图片、表单元素。
+(2).p标签是一个文本级标签。p里面只能放文字、图片、表单元素。其他的一律不能放。
+(3).定义列表是一个组标签，不过比较复杂，出现了三个标签：
+dl表示definition list 定义列表
+dt表示definition title 定义标题
+dd表示definition description 定义表述词儿
+dt、dd只能在dl里面；dl里面只能有dt、dd
+
+所有的文本级标签都是行内元素，除了p；p是个文本级，但是是个块级元素；
+所有的容器级标签都是块级元素
+
+标签设置display:inline;那么这个标签立即变为行内元素
+
+
+                盒子模型(盒模型,框模型)
+                    css将页面中所有的元素都设置为一个矩形盒子
+                    将元素设置为盒子后,对页面的布局就变成将不同盒子摆放在不同的位置
+
+                    每个盒子都有以下几个部分组成
+                        内容区 content,大小由width,height两个属性来设置
+                        内边距 padding
+                        边框 border
+                        外边距 margin
+
+                边框(border),边框的大小会影响整个盒子的大小
+                    三个属性
+                        border-width 边框宽度
+                            可以指定4个方向的边框宽度
+                            1个值 上下左右
+                            2个值 上下 左右
+                            3个值 上 左右 下
+                            4个值 上 右 下 左
+                        border-style 边框的样式
+                            dotted - 定义点线边框
+                            dashed - 定义虚线边框
+                            solid - 定义实线边框
+                            double - 定义双边框
+                            groove - 定义 3D 坡口边框。效果取决于 border-color 值
+                            ridge - 定义 3D 脊线边框。效果取决于 border-color 值
+                            inset - 定义 3D inset 边框。效果取决于 border-color 值
+                            outset - 定义 3D outset 边框。效果取决于 border-color 值
+                            none - 定义无边框
+                            hidden - 定义隐藏边框
+                        border-color 边框的颜色
+                            可以通过以下方式设置颜色：
+
+                                name - 指定颜色名，比如 "red"
+                                HEX - 指定十六进制值，比如 "#ff0000"
+                                RGB - 指定 RGB 值，比如 "rgb(255,0,0)"
+                                HSL - 指定 HSL 值，比如 "hsl(0, 100%, 50%)"
+                                transparent
+                            注释：如果未设置 border-color，则它将继承元素的颜色。
+
+                        border简写属性,通过该属性,可以设置所有边框的相关样式
+                        虽然没顺序要求,但是建议按照官方的width,style,color的顺序书写
+
+                        简写属性还可以拆分来写
+                            border-top
+                            border-right
+                            border-bottom
+                            border-left
+
+         */
+        .w{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-style: solid;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="w">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <span></span>
+
+</body>
+</html>

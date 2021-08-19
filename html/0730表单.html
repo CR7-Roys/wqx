@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单要提交的地址 -->
+    <form action="./0730表格.html">
+        <!-- 文本框 
+                注意,数据要提交到服务器,必须为元素指定一个name属性
+                readonly 只读
+                disabled 禁用,数据不会提交
+                autofocus 设置表单自动获取焦点
+                placeholder 提示
+        -->
+        姓名:<input type="text" name="user_name" placeholder="请输入您的姓名">
+<br>
+        <!-- 密码框 -->
+        密码:<input type="paasword" name="password" placeholder="请输入您的密码">
+        <br>
+        <!-- 单选按钮 -->
+        <input type="radio" name="sex" value="0" checked>男
+        <input type="radio" name="sex" value="1">女
+        <br>
+        <!-- 多选按钮 (复选框)-->
+        <input type="checkbox" name="hhh" id="" value="1"> 篮球
+        <input type="checkbox" name="hhh" id="" value="2">足球
+        <input type="checkbox" name="hhh" id="" value="3">羽毛球
+        <input type="checkbox" name="hhh" id="" value="4">乒乓球
+<br>
+        <!-- 下拉列表 -->
+        <select name="xl" id="">
+            <option value="1">A</option>
+            <option value="2" selected>B</option>
+            <option value="3">C</option>
+        </select>
+
+        <!--提交按钮 -->
+        <input type="submit" >
+
+        <!-- 重置按钮 -->
+        <input type="reset">
+
+        <!-- 普通按钮 -->
+        <input type="button" value="按钮">
+
+        <!-- 注册-->
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

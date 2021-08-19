@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    在js的底层,字符串是以数组的方式保存的["a","f","}"]
+
+    字符串的方法
+        charAt 查找指定位置的字符
+            例子 console.log(str.charAt());
+        charCodeAt 查找指定位置字符的UNcode编码
+            例子 console.log(String.charCodeAt());
+        fromCharCode 这个比较特殊,它是构造函数的方法
+            可以用字符编码去获取字符
+            例子  console.log(String.fromCharCode(2626));
+
+        concat() 链接两个或多个字符串
+        indexOf() 可以检查一个字符串中是否含有指定内容
+            有,返回第一次出现的索引
+            否则,返回-1
+        
+        lastIndexOf() 从后向前搜索字符串。
+            例子  var str = "hsglf";
+             console.log(str.lastIndexOf('s'));
+             他们都支持第二个参数,表示从第几个位置开始查找
+
+
+        slice  substring  substr 三大金钢
+
+             slice 截取字符串指定字符
+             substring 用来截取一个字符串
+                它和slice用法几乎一样,不同的是
+                    例子 console.log(str.substring(2,3));
+                substring的参数不接受负值
+                    例子 console.log(str.substring(0));
+                如果非要传递负值,则默认使用 0;
+                它还会自动吊证参数位置,如果第二个参数小于第一个,则自动交换
+                    例子  console.log(str.substring(2,-1));
+
+            substr 用来截取一个字符串
+                参数
+                    1.截取开始的位置索引
+                    2.截取的长度
+                例子 console.log(str.substr(1,2));
+
+            split 将一个字符串拆分成数组
+                需要一个字符串作为一个参数,将会根据该字符串去拆分数组
+                如果传递一个空串,则会将每个字符拆分为数组的每一个元素
+
+            toUpperCase 将一个字符串转化成大写
+            toLowerCase 讲一个字符串转化成小写
+
+
+            
+        
+
+    <script>
+        var str = '路飞,索隆,娜美';
+        str = "abcdefg";
+        console.log(str.substr(0,1).toUpperCase()+str.substr(1));
+    </script>
+</body>
+</html>

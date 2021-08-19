@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件委托可以用来添加动态添加
+        
+    -->
+    <button>添加Ul</button>
+    <ul>
+        <li>
+            <a href="javascript:;" class="link a">链接1</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link b">链接2</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link c d">链接3</a>
+        </li>
+    </ul>
+    <script>
+           var ul = document.querySelector('ul');
+        var btn=document.querySelector('button');
+        btn.onclick = function(){
+         
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML = '<a href="javascript:;" class="link">新的超链接</a>'
+        }
+        //target 表示触发事件的对象
+        ul.onclick=function(event){
+            if(event.target.className==='link'){
+                console.log(event.target);
+            }
+        }
+
+       /*  var allA= document.getElementById("a");
+        for(var i=0;i<allA.length;i++){
+            allA[i].onclick=function(){
+                console.log('a');
+            }
+        } */
+    </script>
+</body>
+</html>

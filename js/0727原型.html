@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*   function fun() {
+            console.log(this.name);
+        } */
+
+        /* function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            // this.sayName = fun; 
+        }
+        //写在构造函数里
+        Person.prototype.head="头部"
+            Person.prototype.sayName = function () {
+                console.log(this.name,this.age,this.sex);
+           
+        }
+        var per = new Person('佐助', 20, '男');
+        var per1 = new Person('小樱', 20, '女');
+        per.sayName();
+        per1.sayName();
+        console.log(Person.prototype);
+        console.log(per.__proto__ === per1.__proto__); */
+
+        /*  function My(name) {
+             this.name = name;
+         }
+
+         My.prototype.abc = 123;
+         My.prototype.sayName = function () {
+             console.log(this.name);
+         }
+         var my = new My('梅老板');
+         var my1 = new My('C罗');
+         my.sayName();
+         my1.sayName();
+         console.log(My.prototype);
+         console.log(my.__proto__ === my1.__proto__); */
+
+        //1.创建一个构造函数
+        function MyClass(age,name) {
+            this.age = age;
+            this.name = name;
+        }
+        //向MyClass的原型中添加一个name 属性
+        MyClass.prototype.name = '原型中的名字'
+        var cl = new MyClass(21,'C罗');
+
+        var mc = new MyClass(34,'梅西');
+
+        //重构方法
+        MyClass.prototype.toString = function(){
+            // console.log(111);
+            return "MyClass[age="+this.age+",name="+this.name+"]"
+        }
+
+        var hh = new MyClass(33);
+
+
+        // console.log('name' in mj,mj);
+
+        // hasOwnProperty 检查自身对象(不包括原型) 中是否含有某个属性
+        // console.log(mj.hasOwnProperty("name"));
+
+        //往上一级找
+        //console.log(mj.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+        //console.log(mc);
+        
+        var result = mc.toString();
+        console.log(result);
+
+
+
+        
+    </script>
+
+</body>
+
+</html>

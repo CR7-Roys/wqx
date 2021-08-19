@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    search()
+        可以搜索字符串中是否含有指定的字符
+            如果搜到,则返回第一次出现的索引,如果没有,返回-1
+
+            g 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）
+
+            m执行多行匹配
+
+            例子  var str = "hello abc hello aec hello afc"
+                    var redsult = str.search(/a[bef]c/g);
+                    console.log(redsult);
+
+    match()
+        根据正则表达式,从一个字符串中将符合规则的内容提取出来
+        默认情况下它只会找到第一个符合规则的内容,找到后停止工作
+        我们可以设置全局匹配模式,这样就会匹配到所有内容
+
+    匹配可以写多个,没有顺序之分
+        
+        例子 var result = str.match(/a/ig);
+             console.log(result);
+
+    replace
+        可以将字符串中指定的内容替换成新的内容
+        参数1,被替换的内容(正则表达式)
+        参数2,新内容
+        默认情况下,只会替换一个
+        var result = str.replace(/a/,'你好');
+        console.log(result);
+
+        删除
+        var str = "hello abc hello aec hello afc";
+        var result = str.replace(/a[bfe]c/g,'');
+        console.log(result);
+
+
+    <script>
+        // var str = "1a2b3c4d5e6f";
+        // var arr = str.split(/[A-z]/);
+
+        var str = "hello abc hello aec hello afc";
+        // var redsult = str.search(/a[bef]c/g);
+
+        // var result = str.match(/a/ig);
+        // console.log(result);
+
+
+
+        var result = str.replace(/a[bfe]c/g,'');
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 500px;
+            background-color: rgb(226, 9, 9);
+            padding: 10px;
+            border: 10px solid yellow;
+            position: absolute;
+        }
+        #box2{
+            padding: 100px;
+            background-color: teal;
+            position: absolute;
+            /* overflow: hidden; */
+        }
+        #box3{
+            /* padding: 100px; */
+            background-color: teal;
+        }
+       
+    </style>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br />
+    <br />
+    <br />
+    <div id="box3" style="position: relative;">
+        <div id="box2">
+            <div id="box1"></div>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById("btn01");
+        var box1 = document.getElementById("box1");
+        btn.onclick = function(){
+            // clientWidth
+            // clientHeight
+            // 这两个属性可以获取元素的可见宽度和高度,只包括内容区和内边距,不包括边框,只读
+           
+            // offsetHeight
+            // offsetWidth
+            // 获取元素的整个高度和宽度,包括了内容区和内边距和边框,属性也是只读的.
+
+            // offsetParent
+            //     可以用来获取当前元素的开启了定位的 最近的 祖先元素
+            //     如果所有的祖先都没开启定位,则返回body
+
+            // offsetTop
+            // offsetLeft
+            //     获取当前相对于父元素的水平或垂直偏移量
+
+            // scrollWidth
+            // scrollHeight
+            //     可以获取整个滚动区的宽度和高度
+
+            // scrllTop
+            //     获取垂直滚动条垂直的距离
+            // scrollLeft
+            //     获取水平滚动条滚的距离
+           
+            console.log(box1.scrollTop);
+            if(box1.scrollTop===box1.scrollHeight){
+                console.log("已经到底部");
+            }
+            else{
+                console.log("没有到底部");
+            }
+        }
+    </script>
+</body>
+</html>

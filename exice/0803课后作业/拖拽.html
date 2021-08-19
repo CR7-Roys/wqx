@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(236, 75, 11);
+            position: absolute;
+        }
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(17, 189, 31);
+            position: absolute;
+            top: 500px;
+            left: 500px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="box"> </div>
+    <div id="box1">我是一段文字</div>
+    <script>
+        var box = document.getElementById('box');
+        /*  */
+        drag(box);
+        drag(box1);
+        function drag(obj){
+        obj.onmousedown = function (event) {
+            event = event || window.event;
+            obj.setCapture && obj.setCapture();
+            /* offsetLeft 是对父元素的水平偏移量,offsetTop是垂直偏移量 */
+            //div的鼠标偏移量 鼠标.clientX - 元素.offsetLeft
+            var  l = event.clientX - obj.offsetLeft;
+            var t = event.clientY - obj.offsetTop;
+            document.onmousemove = function (event) {
+                event = event || window.event;
+                var x = event.clientX-l;
+                var y = event.clientY-t;
+                obj.style.left = x + "px";
+                obj.style.top = y + "px";
+            };
+        document.onmouseup = function () {
+            // 取消onmousemove事件
+            document.onmousemove = null;
+            // 取消onmouseup事件
+            document.onmouseup = null;
+        }
+        return false;
+ };
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 函数作用域
+            调用函数的时候创建,函数执行完毕后销毁
+            每调用一次函数就会创建一个作用域,他们之间相互独立
+            
+            函数作用域中可以访问全局作用域的变量
+            在全局作用域中无法访问函数作用域中的变量
+
+            全局变量都在window中
+
+             */
+       /*  var a = 10;
+        function fun(){
+            console.log(a);
+            var a = "fanzhongde a";
+            var b = 20;
+            function fun2(){
+                console.log(window.a);
+
+            }
+            fun2();
+        } */
+        //在函数中不适用var 声明变量都会成为全局变量
+        // 定义了形参就相当于在函数作用域中声明了变量
+        /* function fun3(a){
+            // fun4();
+            
+             a=40
+             console.log(a);
+            function fun4(){
+                console.log(4444);
+            }
+        }
+        fun3(10); */
+        // console.log(a);
+        var a =123;
+        function fun(a){
+            console.log(a);
+            a = 456;
+
+        }
+        fun(123);
+        console.log(a);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    DOM 全称 Document Objeck Model 文档对象模型
+
+    节点
+        是构成网页的最基本部分,网页中每一个部分都是一个节点
+
+        文档节点 html文档
+        元素节点 html标签
+        属性节点 元素的属性
+        文本节点 标签中的内容
+
+        获取元素节点
+            getElementById() 根据元素的id属性值获取元素节点
+            getElementsByTagName() 通过标签名来获取一组元素节点
+            getElementsByName() 通过name属性获取一组元素节点
+            childNodes 获取当前节点下的所有子节点
+            firstChild 当前节点的第一个子节点
+            lastChild 当前节点的最后一个子节点
+
+        获取元素节点的子节点
+            通过具体的元素节点去获取
+            parrentNode 当前节点的父节点
+            previousSibling 当前节点的前一个兄弟
+            nextSibling 当前节点的下一个兄弟
+
+        元素节点的属性
+            document.createElement(标签名) 创建节点
+            插入节点
+                父节点.appendChild(子节点)
+            替换节点
+                父节点.replaceChild(新节点,旧节点)
+            删除节点
+                父节点.removeChild(子节点)
+            
+            
+        
+
+    <script>
+       
+    </script>
+</body>
+</html>

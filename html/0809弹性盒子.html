@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul{
+            list-style-type: none;
+            /* 将ul设置为弹性容器 */
+            display: flex;
+            width: 250px;
+            /* height: 150px; */
+            border: 1px solid skyblue;
+          /*   flex-direction: 指定容器中的弹性元素的排列方式
+                可选值
+                    row 默认值,弹性元素在容器中水平排列
+                        主轴
+                    row-reverse 弹性元素在容器中反向水平排列
+                        主轴
+                    column 弹性元素纵向排列(上到下)
+                    column-reverse 弹性元素纵向排列(下到上)
+            主轴
+                弹性元素的排列方向称为主轴
+            侧轴(副轴)
+                与主轴垂直方向的称为侧轴
+
+            flex-grow: 指定弹性元素的伸展系数
+                当父元素有多余的空间,子元素如何伸展
+                父元素的剩余空间,会按照比例进行分配
+
+            flex-shrink: 指定弹性元素的伸缩系数
+
+            flex-wrap 设置属性元素是否再弹性盒子中自动换行
+                可选值
+                    nowrap 默认值(不换行)
+                    wrap  元素沿着测轴方向自动换行
+                    wrap-reverse 车轴反向反向换行
+            flex-flow:是derection和wrapd的简写属性
+
+            justity-content: 如何分配主轴上的空白空间
+                可选值
+                    flex-start 沿着主轴的起始边排列
+                    flex-end 沿着主轴的的结尾边排列
+                    space-around空白分布到元素的两侧
+                    center   居中
+                    space-between 空白均匀分布到元素之间
+            
+            align-items 元素在侧轴上对齐方式
+                可选值
+                    stretch 如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。        
+                    flex-start 元素不会拉伸,沿着侧轴的起始边对齐
+                    flex-end 弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界
+                    baseline 基线对齐,文字的基线 如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。
+                    center 弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。
+*/
+            
+            /* flex-wrap: wrap-reverse; */
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(235, 139, 15);
+            /* flex-grow: 1; */
+        }
+        li:first-child{
+            /* flex-grow: 2; */
+            flex-shrink:2;
+            background-color: slateblue;
+        }
+        li:last-child{
+            /* flex-grow: 3; */
+            flex-shrink:4;
+            background-color: rgb(36, 238, 29);
+        }
+    </style>
+</head>
+<body>
+    flex(弹性盒子,伸缩盒子)
+        弹性容器(弹性盒子)
+            要是用弹性容器
+        弹性元素
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</body>
+</html>
