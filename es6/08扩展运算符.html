@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user1 = ['二柱子','怪力王','吊车尾'];
+        const user2 = ['大娃','二娃','水娃'];
+        const arr= user1.concat('隐私娃',user2,'火娃');
+        const arr1 = [...user2,...user1];
+        user2[0]="七娃";
+        console.log(arr,arr1,user2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            cursor: pointer;
+            margin: 50px 0px;
+
+        }
+        span{
+            font-size: 20px;
+            margin-left: 20px;
+            display: block;
+            float: left;
+
+        }
+        span:hover{
+            color: rgb(230, 130, 17);
+            font-size: 60px;
+            transform:rotate(1080deg);
+            transition:transform 3s linear;
+            margin-top:-30px
+        }
+    </style>
+</head>
+<body>
+    <h1>这世界很酷!</h1>
+    <script>
+        const arr = document.querySelector('h1');
+        const str = arr.innerHTML;
+        console.log(str);
+        const str1 =[...str].map(item=>`<span>${item}</span>`).join('');
+        arr.innerHTML=str1;
+        
+    </script>
+</body>
+</html>

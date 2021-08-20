@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [0,1,2];
+        // Array.from 可以把一个雷数组对象,转换成真正的数组
+        const array = Array.from(arr);
+        console.log(array);
+        // function sum(){
+        //     const arr =Array.from(arguments);
+
+        //     console.log(arr);
+        // }
+        // sum(10,20);
+        
+        // const arr1 = new Array(2,3)
+        //Array.of() 这个方法可以保证创建数组返回结果的一致性
+        // const arr1 = Array.of(2,3);
+        // console.log(arr1);
+
+        // arr.find 如果查询到,返回被查询到的元素,否则underfine
+        // arr.findIndex 查询元素的索引值,如果查询不到,返回 -1
+        // arr.some 返回一个布尔值
+        // arr.every 数组里所有的元素都满足查询条件,才会返回true
+        // arr.filter 过滤数组,把所有符合条件的数组组合成一个新的数组
+            const arr2 = [
+                {
+                    name:"路飞",
+                    age:16
+                },
+                {
+                    name:"索隆",
+                    age:18
+                },
+                {
+                    name:"娜美",
+                    age:19
+                },
+            ]
+            var a = arr2.find(item=>item.name==='路飞');
+            var b = arr2.filter(item=>item.age<18)
+            console.log(a);
+            console.log(b);
+
+    </script>
+</body>
+</html>

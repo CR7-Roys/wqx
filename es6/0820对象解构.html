@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name:"博人",
+            age:16,
+            sex:'男',
+            family:{
+                mother:"雏田",
+                father:"鸣人",
+                grandfather:"水门"
+            }
+        }
+        // const name = user.name;
+        // const age = user.age
+        //先声明变量,再赋值
+        const name = '1'
+        const{name:n,age,sex,family}=user
+
+        //undefinde 默认值
+        console.log(n,age,sex,family);
+
+
+        const arr = ['二柱子','怪力王','吊车尾']
+        const [two,...one]=arr;//... 是剩余参数
+        console.log(two,one);
+
+        let a = 10;
+        let b = 20;
+        [a,b]=[b,a];
+        console.log(a,b);
+    </script>
+</body>
+</html>

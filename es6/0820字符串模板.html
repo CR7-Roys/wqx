@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // const name = "lufei"
+        // const age = 18;
+        // const obj ={
+        //     age : 20
+        // }
+        // console.log(name+"今年"+age+"岁");
+        // const tem = `<div>
+        //                 <div>
+                        
+        //                 </div>
+        //             </div>`
+        //             console.log(name+"今年"+age+"岁");
+        //             console.log(`${name}今年${obj.age===20 ? '长':'短' }命`);
+
+        //标签模板字符串(高级用法)
+        const user = "路飞"
+        const topic = "橡胶机关枪"
+        //模板替换
+        function fun(str,...val){
+            console.log(str,val);
+            const html =val.reduce((item,item1)=>{
+                console.log(val);
+               return `${str[0]}<span>${item}</span>${str[1]}<span>${item1}</span>`;
+            })
+            return html;
+        }
+        const lufei = fun`我${user}在使用${topic}`
+        console.log(lufei);
+        document.write(lufei);
+
+        // const arr = ['曹操','小乔','大桥'];
+        // function sum(perv,cur){
+        //     console.log(perv,cur);
+        //     return perv+cur;
+        // }
+        // const str = arr.reduce(sum);
+        // console.log(str);
+        // var str=sum(sum('大刀','扇子'),'大桥');
+        // console.log(str);
+    </script>
+</body>
+</html>

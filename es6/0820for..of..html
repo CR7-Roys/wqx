@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* for..of可以遍历一切可遍历的对象
+        ,但是唯一遗憾的是不支持对象的形式(object)
+         
+        */
+        const arr = ['二柱子','怪力王','吊车尾'];
+        arr.value = "奈良";
+        //对象用for..in,其他用for..of
+        for (const [item,index] of arr.entries()) {
+            console.log(`索引${item},元素${index}`);
+        }
+
+    </script>
+</body>
+</html>
