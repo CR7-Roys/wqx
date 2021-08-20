@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <!-- xml json
+    ajax的优点
+            按需获取数据,提升系统性能
+        缺点
+            异步获取数据,不利于搜索引擎
+    
+    ajax原理是通过XMLHttpRequest 对象向服务器发送请求
+
+-->
+    <table border="1" id="bg">
+        <tr>
+            <th>albumId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>thumbnailUrl</th>
+            <th>url</th>
+        </tr>
+    </table>
+    <img src="" alt="">
+    <script>
+        var xhr = new XMLHttpRequest();
+        //規定请求类型
+        xhr.open('get',"http://jsonplaceholder.typicode.com/photos");
+        //发送请求
+        xhr.send();
+        //监听readystate事件
+        xhr.onreadystatechange = function(){
+          /*   0 请求未初始化
+            1 服务器连接已建立
+            2 请求已接收
+            3 请求处理中
+            4 请求已完成,且响应已就绪
+         */
+
+        if(xhr.readyState===3 && xhr.status === 200){
+            console.log(xhr.responseText);
+        };
+        
+        }
+       
+        var bg = document.getElementById('bg')
+        // console.log(bg);
+        $.ajax({
+            url:"http://jsonplaceholder.typicode.com/photos",
+            method:"get",  
+            success:function(data){
+               for(var i=0;i<data.length;i++){
+                   var tr = document.createElement('tr');
+                   bg.append(tr);
+                  
+                   var td1 = document.createElement('td');
+                   td1.innerHTML = data[i].albumId;
+                   tr.append(td1);
+
+                   var td2 = document.createElement('td');
+                   td2.innerHTML = data[i].id;
+                   tr.append(td2);
+
+                   var td3 = document.createElement('td');
+                   td3.innerHTML = data[i].title;
+                   tr.append(td3);
+
+                   var td4 = document.createElement('td');
+                   tr.append(td4);
+                   var img = document.createElement('img');
+                   img.style.width = 100 + 'px';
+                   img.style.height = 80 +'px';
+                   td4.appendChild(img);
+                   img.src = data[i].thumbnailUrl;
+                   
+                   var td5 = document.createElement('td');
+                   tr.append(td5);
+                   var img1 = document.createElement('img');
+                   img1.style.width = 150 + 'px';
+                   img1.style.height = 100 +'px';
+                   td5.appendChild(img1);
+                   img1.src = data[i].url;
+                   
+               }
+              
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

@@ -51,4 +51,25 @@ ws.once('close',function(){
 rs.on("data",function(data){
    ws.write(data);
 })
+//  验证路径是否存在
+fs.existsSync
+//获取文件信息
+fs.stat
+fs.statSync
+//删除文件
+fs.unlink
+fs.unlinkSync
+//列出文件
+fs.readdir
+fs.readdirSync
+//建立目录
+fs.mkdir
+fs.mkdirSync
+///删除目录
+fs.rmdir
+fs.rmdirSync
+//重命名
+fs.rename
+fs.renameSync
+
 
